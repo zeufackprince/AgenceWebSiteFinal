@@ -12,17 +12,31 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The type User controller.
+ */
 @RestController
 @RequestMapping(path = "/api")
 public class UserController {
 
     private final UserRepository userRepository;
 
+    /**
+     * Instantiates a new User controller.
+     *
+     * @param userRepository the user repository
+     */
     public UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
 
+    /**
+     * Create user user.
+     *
+     * @param request the request
+     * @return the user
+     */
     @PostMapping("/users/register")
     public User createUser(@RequestBody User request)
     {
@@ -49,12 +63,23 @@ public class UserController {
         }
     }
 
+    /**
+     * User list list.
+     *
+     * @return the list
+     */
     @GetMapping("/users/all")
     public List<User> userList()
     {
         return this.userRepository.findAll();
     }
 
+    /**
+     * Gets users by role.
+     *
+     * @param role the role
+     * @return the users by role
+     */
     @GetMapping("/users/{role}")
     public ResponseEntity<List<User>> getUsersByRole(@PathVariable Role role) {
         List<User> usersByRole;
@@ -74,6 +99,13 @@ public class UserController {
         return ResponseEntity.ok(usersByRole);
     }
 
+    /**
+     * Update user response entity.
+     *
+     * @param id   the id
+     * @param user the user
+     * @return the response entity
+     */
     @PutMapping("/users/{id}")
     public ResponseEntity<?> updateUser(@PathVariable Long id, @RequestBody User user) {
         User existingUser = userRepository.findById(id)

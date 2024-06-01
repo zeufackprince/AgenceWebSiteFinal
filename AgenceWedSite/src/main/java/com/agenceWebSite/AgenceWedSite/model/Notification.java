@@ -8,6 +8,9 @@ import lombok.Setter;
 
 import java.util.Set;
 
+/**
+ * The type Notification.
+ */
 @Entity
 @Table(name = "notifications")
 @AllArgsConstructor

@@ -9,6 +9,9 @@ import lombok.Setter;
 
 import java.util.List;
 
+/**
+ * The type User.
+ */
 @Entity
 @Table(name = "user")
 @AllArgsConstructor @NoArgsConstructor

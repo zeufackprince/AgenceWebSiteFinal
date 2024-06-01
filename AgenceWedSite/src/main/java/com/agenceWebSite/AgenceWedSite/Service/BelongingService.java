@@ -17,8 +17,9 @@ import java.util.List;
 import java.util.Optional;
 
 
-
-
+/**
+ * The type Belonging service.
+ */
 @Service
 public class BelongingService {
 
@@ -27,11 +28,23 @@ public class BelongingService {
 
     private final UserRepository userRepository;
 
+    /**
+     * Instantiates a new Belonging service.
+     *
+     * @param belongingRepository the belonging repository
+     * @param userRepository      the user repository
+     */
     public BelongingService(BelongingRepository belongingRepository, UserRepository userRepository) {
         this.belongingRepository = belongingRepository;
         this.userRepository = userRepository;
     }
 
+    /**
+     * Create bien immobilier belongings.
+     *
+     * @param request the request
+     * @return the belongings
+     */
     public Belongings createBienImmobilier(Belongings request) {
 
         Optional<User> userdb = this.userRepository.findByUsername(request.getUser().getUsername());
@@ -69,15 +82,32 @@ public class BelongingService {
     }
 
 
+    /**
+     * Gets all.
+     *
+     * @return the all
+     */
     public List<Belongings> getAll()
     {
         return this.belongingRepository.findAll();
     }
 
+    /**
+     * Gets abelonging.
+     *
+     * @param id the id
+     * @return the abelonging
+     */
     public Optional<Belongings> getAbelonging(Long id) {
         return this.belongingRepository.findById(id);
     }
 
+    /**
+     * Gets belonging by type.
+     *
+     * @param type the type
+     * @return the belonging by type
+     */
     public Optional<List<Belongings>> getBelongingByType(BelongingType type) {
         Optional<List<Belongings>> belongingsType;
         switch (type) {
@@ -95,6 +125,14 @@ public class BelongingService {
         }
         return belongingsType;
     }
+
+    /**
+     * Update belonging response entity.
+     *
+     * @param id      the id
+     * @param request the request
+     * @return the response entity
+     */
     public ResponseEntity<?> updateBelonging(Long id, Belongings request) {
         Belongings existingBelongingds = belongingRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Entity with id :" + id + "Not Found"));

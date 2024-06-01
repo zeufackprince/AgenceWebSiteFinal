@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * The type Publication controller.
+ */
 @RestController
 @RequestMapping("/api")
 public class PublicationController {
@@ -25,6 +28,13 @@ public class PublicationController {
 
     private final UserRepository userRepository;
 
+    /**
+     * Instantiates a new Publication controller.
+     *
+     * @param publicationRepository the publication repository
+     * @param belongingsRepository  the belongings repository
+     * @param userRepository        the user repository
+     */
     public PublicationController(PublicationRepository publicationRepository,
                                  BelongingRepository belongingsRepository,
                                  UserRepository userRepository) {
@@ -33,6 +43,12 @@ public class PublicationController {
         this.userRepository = userRepository;
     }
 
+    /**
+     * Create publication response entity.
+     *
+     * @param request the request
+     * @return the response entity
+     */
     @PostMapping("/publications/create")
     public ResponseEntity<Publication> createPublication(@RequestBody Publication request) {
         // Validate user role (ADMIN or AGENT)
@@ -74,6 +90,11 @@ public class PublicationController {
         return user.getRole() == Role.ADMIN || user.getRole() == Role.AGENT;
     }
 
+    /**
+     * Gets publication.
+     *
+     * @return the publication
+     */
     @GetMapping("/publications/getAll")
     public List<Publication> getPublication()
     {

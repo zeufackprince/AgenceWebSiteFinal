@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Favoris = ({ favoris, removeFavori }) => {
     return (
+        <>
         <div className="favoriContainer">
             <h1>Mes Favoris</h1>
 
@@ -15,17 +16,23 @@ const Favoris = ({ favoris, removeFavori }) => {
                     <p>Aucun favori ajouté.</p>
                 ) : (
                     favoris.map(bien => (
-                        <div key={bien.id} className="bienImmoFav">
-                            <img src={bien.img} alt={bien.title} />
-                            <p className="titreArticleFav">{bien.title}</p>
-                            <p className="priceFav">{bien.price}</p>
-                            <Link className='moreFav' to={`/detail/${bien.Link}`}> Plus d'info</Link>
-                            <FaTimes className="removeFav" onClick={() => removeFavori(bien.id)}/>
-                        </div>
+                       
+                            <div key={bien.id} className="bienImmoFav">
+                                <Link to='/detail' className='moreDetails'>
+                                    <img src={bien.img} alt={bien.title} />
+                                    <p className="titreArticleFav">{bien.title}</p>
+                                    <p className="priceFav">{bien.price}</p>
+                                </Link>
+                                <FaTimes className="removeFav" onClick={() => removeFavori(bien.id)}/>
+                            </div>
+                       
+                        
                     ))
                 )}
             </div>
         </div>
+        </>
+        
     );
 };
 

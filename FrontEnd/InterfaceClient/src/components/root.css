@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+:root{
+    --white: #fff;
+    --lignt: #222831;
+    --fuscha: hsl(357, 96%, 44%);
+    --desaturate-fuscha: hsla(162, 94%, 57%, 0.15);
+    --desaturate-fuscha-2: hsla(160, 94%, 57%, 0.1);
+    --cyan: hsl(184, 46%, 57%);
+    --desaturate-cyan: hsla(184, 46%, 57%, 0.25);
+    --desaturate-cyan-2: hsla(184, 46%, 57%, 0.15);
+    --light-blue: #bbeef1;
+    --pinkless: #fff3e0;
+    --yellow: #f1b813;
+
+    --color-shadow : rgba(73, 73, 73, 0.35);
+    
+    --text-color-primary: #314657;
+    --text-color-secondary: #58626e;
+    --text-color-third: #9db3be;
+
+    --box-shadow-card: 8px 8px 32px var(--desaturate-fuscha);
+    --box-shadow-card-2: 8px 8px 32px var(--desaturate-cyan);
+    --box-sidebar: 2px 5px 16px var(--desaturate-cyan-2);
+    --box-shadow: 8px 8px 32px var(--color-shadow);
+
+    --padding-card: 28px;
+    --border-radius-rounded: 58px;
+    --border-radius-4: 4px;
+    --border-radius-8: 8px;
+    --border-radius-12: 12px;
+    --border-radius-card: var(--padding-card);
+
+    --background-form : rgb(181, 181, 181);
+    --red:rgb(255, 69, 69);
+}

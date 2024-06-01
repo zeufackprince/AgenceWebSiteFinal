@@ -1,0 +1,84 @@
+/* Footer.css */
+
+.footer {
+    background-color: #000;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+}
+
+.footer-section .logo{
+    color: var(--fuscha);
+    font-size: 40px;
+    font-weight: bold;
+}
+.footer-section h4 {
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: var(--fuscha);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+}
+
+.social-links li {
+    margin: 0 10px;
+}
+.social-links li a{
+    font-size: 30px;
+    font-weight: bold;
+}
+.social-links .faceLk:hover{
+    color: #1877F2;
+}
+.social-links .twLk:hover{
+    color:#1DA1F2 ;
+}
+.social-links .igLk:hover{
+    color: #8a3ab9 ;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}

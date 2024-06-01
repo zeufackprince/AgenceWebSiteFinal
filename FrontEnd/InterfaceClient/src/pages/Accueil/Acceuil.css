@@ -1,0 +1,206 @@
+/*Section de presentation du site*/
+
+.presentation{
+    width: 100%;
+    height: 600px;
+    background: no-repeat center / cover url('../../images/houses/house6.jpg');
+    position: relative;
+    padding: 3px;
+}
+
+.txtPres{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--fuscha);
+    width: 90%;
+    height: 100%;
+}
+.presentation .txtPres h1{
+    font-size: calc(18px + 1.8vw + 2px);
+    color: var(--fuscha);
+    text-align: center;
+}
+
+.presentation .txtPres h3{
+    width:70%;
+    font-size: 20px;
+    color: var(--white);
+    text-align: justify;
+    
+}
+
+/* Responsive presentation */
+@media  screen and (max-width:1100px) {
+    .presentation .txtPres h3{
+        width:100%;
+        text-align: justify;
+        font-size: 1rem;
+    }
+}
+
+/*A propos de immobilius*/
+
+.aboutUs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.imgAboutUs{
+    padding: 20px 35px;
+    width: 50%;
+}
+.imgAboutUs img{
+    width: 90%;
+}
+
+.aboutImmo{
+    padding: 20px 30px;
+    width: 50%;
+}
+
+.aboutImmo h1{
+    font-size: calc(20px + 1.85vw + 3px);
+    font-weight: bold;
+    margin: 10px auto;
+    text-align: center;
+}
+.aboutImmo h2{
+    font-weight: 700;
+    font-size: 22px;
+    margin: 10px auto;
+    text-align: justify;
+    text-align: center;
+}
+
+.aboutImmo h3{
+    font-weight: 300;
+    text-align: justify;
+}
+
+/*Responsive A propos de nous*/
+
+@media screen and (max-width : 1000px) {
+    .aboutUs{
+        display: flex;
+        flex-direction: column;
+    }
+    .aboutImmo h2{
+        font-size: 18px;
+    }
+    .aboutImmo h3{
+        font-size: 14px;
+    }
+    .imgAboutUs img{
+        width: 100%;
+    }
+}
+/* Quelques articles immobilier */ 
+.articlesImmo{
+    width: 90%;
+    margin: auto;
+}
+
+.articlesImmo h1{
+    font-size: 40px;
+    margin: 35px;
+    text-align: center;
+    margin: 70px 40px;
+}
+.articlesImmo .listBien{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill,32%);
+    gap: 30px;
+}
+
+.listBien .bienImmo img{
+    width: 100%;
+    
+}
+
+.listBien .bienImmo{
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    transition: 0.5s;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius-8);
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.listBien .bienImmo:hover{
+    transform: scale(1.06);
+}
+.titreArticle{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.price{
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--yellow);
+    margin: 10px 0;
+}
+
+.bienImmo .more{
+    width: 90%;
+    border-radius: 8px;
+    border: none;
+    background: var(--fuscha);
+    color: var(--white);
+    font-weight: bold;
+    transition: 0.2s;
+    padding: 8px 0;
+    margin: 10px 0;
+}
+
+.bienImmo .more:hover{
+    background: none;
+    color: var(--lignt);
+    border: 1px solid var(--fuscha);
+}
+
+.addToFavori{
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px;
+    position: absolute;
+    right: 5px;
+    margin: 10px 8px;
+}
+.addToFavori.addedFavori{
+    color: #e60707;
+}
+.addToFavori:hover{
+    color: #e60707;
+}
+.favoriAddedMessage{
+    color: #6f6f6f;
+    font-size: 18px;
+    position: absolute;
+    top: 50px;
+    background: var(--white);
+    padding: 3px;
+}
+
+/*Responsive Liste articles*/
+@media  (max-width:600px){
+    .articlesImmo .listBien{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+    }
+
+    .articlesImmo h1{
+        font-size: 30px;
+    }
+}

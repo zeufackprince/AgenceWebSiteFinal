@@ -1,0 +1,627 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family:'Nunito', sans-serif;
+}
+
+html{
+    font-size: 14px; 
+}
+
+body{
+    background-color: var(--white);
+    color: var(--text-color-primary);
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    overflow-x: hidden;
+}
+
+
+/* Menu de navigation */
+.navbar{
+    position: relative;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    height: 50px;
+    background-color: #fff;
+    z-index: 99;
+}
+
+.navbar a{
+    color: var(--text-color-secondary);
+}
+
+.navbar .logo{
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--fuscha);
+}
+.nav-links{
+    display: flex;
+    align-items: center;
+    
+}
+.navbar .nav-links ul{
+    display: flex;
+    align-items: baseline;
+}
+
+.navbar .nav-links ul li{
+    font-weight: bold;
+    margin: 0 25px;
+    font-size: 16px;
+    display: flex;
+}
+
+.navbar .nav-links ul li a{
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.nav-links ul li a::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: var(--fuscha);
+    display: block;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-links ul li a:hover::after{
+    width: 100%;
+}
+
+.navbar .nav-links ul li a:hover{
+    color: var(--fuscha);
+    font-weight: 700;
+}
+.navbar .nav-links ul .active a{
+    color: var(--fuscha);
+    font-weight: 700;
+}
+
+.loginLink{
+    margin: 10px;
+    background-color: var(--fuscha);
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    border: 1px solid var(--fuscha);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.loginLink span {
+    font-weight: bold;
+    color: var(--white);
+}
+
+.loginLink:hover {
+    background: none;
+    border: 1px solid var(--fuscha);
+}
+
+.loginLink:hover  span{
+    color: var(--lignt);
+}
+
+/* photo de profil / avatar */
+
+.profil img {
+    width: 64px;
+    border-radius: 50%;
+}
+
+.profil p{
+    text-align: center;
+    font-weight: bold;
+    color: var(--lignt);
+    font-size: 20px;
+}
+/* Menu coulissant */ 
+.navbar .fa-bars{
+    position: absolute;
+    top: 25px;
+    right: 50px;
+    font-size: 35px;
+    display: none;
+}
+
+/*Bouton de recherche*/
+
+.searchBtn{
+    background: var(--fuscha);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin: auto 20px;
+}
+.searchBtn .fa-solid{
+    color: var(--white);
+}
+
+.searchBtn:hover{
+    border: 1px solid var(--fuscha);
+    background: var(--white);
+    
+}
+
+.searchBtn:hover .fa-solid{
+    color: var(--lignt);
+}
+.closeMenu{
+    display: none;
+}
+/* code Responsive du Nav Menu */
+
+@media screen and (max-width : 1040px) {
+    .navbar{
+        padding: 0;
+        height: 80px;
+        z-index: 97;
+        position: relative;
+        min-width: 320px;
+    }
+    
+    body{
+        max-width: 1040px;
+        min-width: 320px;
+    }
+    .nav-links{
+        top: 0;
+        position: fixed;
+        width: 100%;
+        backdrop-filter: blur(25px);
+        height: 100vh;
+        background:transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: var(--box-sidebar) ;
+        border: 5px;
+        margin-left: -1800px;
+        transition: all 0.8s ease;
+        z-index: 98;
+    }
+
+    .nav-links.showMenu{
+        margin-left: 0;
+    }
+    .nav-links ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar .nav-links ul li{
+        margin: 15px 0;
+        font-size: 1.2rem;
+        padding: 0 20px;
+    }
+    
+    .navbar .nav-links ul li a{
+        color: var(--lignt);
+    }
+    
+    .navbar .logo{
+        position: absolute;
+        top: 30px;
+        left: 50px;
+        z-index: 97;
+    }
+    .navbar .fa-solid{display: block;}
+
+    .closeMenu{
+        display: block;
+        font-size: 30px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+    .closeMenu:hover{
+        color: #e60707;
+    }
+    .loginLink{
+        position: absolute;
+        bottom: 150px;
+    }
+
+    .loginLink:hover{
+        color: #fff;
+        font-weight: 500;
+    }
+    /* Profil utilisateur*/
+
+   .profil{
+        margin: 0 5px;
+        position: absolute;
+        right: 100px;
+        top:20px ;
+   }
+
+    .profil img{
+        width: 40px;
+    }
+
+    /*Search bouton*/
+    .searchBtn{
+        position: absolute;
+        bottom:45px;
+        
+    }
+    .searchBtn .faSearch{
+        margin: auto;
+    }
+    .searchBtn:hover{
+        background: none;
+    }
+    
+}
+
+@media screen and (max-width:500px) {
+   .navbar .logo{
+        font-size: 20px;
+    }
+}
+
+
+
+/* --- Affichage et Edition du profil utilisateur ---*/
+.showProfile{
+    width: 30%;
+    background: var(--white);
+    border-radius: 12px;
+    position: fixed;
+    right: -1000px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 8px 8px 32px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease;
+}
+
+.showProfile.activeProfile{
+    right: 0;
+}
+.FaTimes{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: none;
+    font-size: 30px;
+    color: var(--lignt);
+}
+.FaTimes:hover{
+    color: #e60707;
+}
+
+.manageProfile{
+    width: 100px;
+    position: relative;
+    margin: 20px;
+}
+.manageProfile img{
+    width: 100%;
+}
+.manageProfile .FaPen{
+    position: absolute;
+    bottom: 7px;
+    right: 2px;
+    background: #fff;
+    padding: 5px;
+    border-radius: 50%;
+}
+.manageProfile .FaPen:hover{
+    color: #06be00;
+}
+
+.profileInformation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.profileInformation .favoriLink{
+    color: var(--lignt);
+    font-weight: bold;
+    font-size: 18px;
+}
+.profileInformation .favoriLink .favori {
+    transition: 0.2s;
+}
+.profileInformation .favoriLink .favori:hover{
+    color: #e60707;
+}
+.profileInformation .favoriLink:hover .favori{
+    color: #e60707;
+}
+/*
+.profileInformation ul{
+    margin: 20px;
+}
+.profileInformation ul li{
+    margin: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+}
+.profileInformation ul li input{
+    border: none;
+    background: none;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    width: 150px;
+}
+
+.editProfileInformation{
+    margin: 0 5px;
+    display: none;
+    transition: all 0.2s;
+}
+
+.profileInformation ul li:hover .editProfileInformation{
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.editProfileInformation:hover{
+    color: #06be00;
+}*/
+
+.logOut{
+    margin: 20px;
+    background-color: var(--fuscha);
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    border: 1px solid var(--fuscha);
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--white);
+    transition: 0.2s;
+}
+.logOut:hover{
+    color: var(--lignt);
+    background: none;
+}
+
+
+/* Formulaire Pop Up*/
+
+.popUpForm{
+    width: 100%;
+    height: 100vh;
+    background:transparent;
+    backdrop-filter: blur(25px);
+    position: fixed;
+    top: -2000px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 0.5s ease-in;
+    z-index: 98;
+}
+
+.popUpForm.showForm{
+    top: 50%;
+}
+.wrap{
+    width: 400px;
+    height: auto;
+    background: var(--white);
+    box-shadow: var(--box-sidebar);
+    padding: 30px;
+    border-radius: var(--border-radius-12);
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+/*Touche de fermeture*/
+
+.closeForm{
+    font-size: 25px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    padding: 5px;
+    background: var(--lignt);
+    color: var(--white);
+    border-radius: 50%;
+}
+
+.closeForm:hover{
+    color: var(--red);
+}
+
+/*Formulaire d'inscription et de connexion*/
+.titres{
+    display: flex;
+    width: 200px;
+}
+
+.titresCo, .titreSi{
+    transition: margin-left 0.2s ease;
+}
+
+.titres p {
+    width: 350px;
+    font-size: 35px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.form-contenu{
+    width: 100%;
+    overflow: hidden;
+}
+
+.form-card{
+    display: flex;
+    width: 200%;
+}
+
+.Fconnexion,.Fsignup{
+    width: 50%;
+    transition: margin-left 0.2s ease;
+}
+
+.form-div{
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.form-div input{
+    height: 50px;
+    width: 95%;
+    outline: none;
+    padding-left: 15px;
+    font-size: 17px;
+    border: none;
+    background: var(--white);
+    border: 1px double var(--fuscha);
+    border-radius: var(--border-radius-8);
+    margin-bottom: 15px;
+    color: var(--lignt);
+}
+
+.mdp,.compte{
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.mdp{
+    color: var(--yellow);
+    display: block;
+    margin: 14px 0;
+}
+
+.compte{
+    text-align: center;
+}
+
+.compte a{
+    color: var(--yellow);
+}
+
+form a:hover{
+    color: var(--red);
+}
+
+.submitForm{
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin: 1rem auto;
+    outline: none;
+    border:1px solid var(--fuscha) ;
+    background:var(--fuscha);
+    border-radius: var(--border-radius-8);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    color:var(--white);
+    transition: background 0.2s ease-in-out,
+                color 0.2s ease-in-out;
+}
+
+.submitForm:hover{
+    background: none;
+    color: var(--lignt);
+}
+
+.slide-controls{
+    display: flex;
+    width: 99%;
+    height: 50px;
+    margin: 30px 0 0 0;
+    justify-content: space-between;
+    border: 2px solid var(--fuscha);
+    font-weight: bold;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    border-radius: var(--border-radius-8);
+}
+
+.slide{
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    transition: all 0.6s ease;
+}
+
+.slide-tab{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    left: 0;
+    z-index: -1;
+    background: var(--fuscha);
+}
+
+.login{
+    color: var(--white);
+}
+
+.signup{
+    color:var(--lignt) ;
+}
+
+.slide-controls input[type = "radio"]{
+    display: none;
+}
+#signup:checked ~ .slide-tab{
+    transition:left 0.2s ease-in-out ;
+    left: 50%;
+}
+#signup:checked ~ .signup{
+    transition: color 0.2s ease-in-out 0.2s;
+    color: var(--white);
+}
+#signup:checked ~ .login{
+    transition: color 0.2s ease-in-out 0.2s;
+    color: var(--lignt);
+}
+
+#login:checked ~ .slide-tab{
+    transition:left 0.2s ease-in ;
+    left: 0%;
+}
+#login:checked ~ .login{
+    transition:color 0.2s ease-in 0.2s;
+    color: var(--white);
+}
+#login:checked ~ .signup{
+    transition:color 0.2s ease-in 0.2s;
+    color: var(--lignt);
+}
+
+ /* Responsive Formulaire*/
+@media  screen and (max-width:900px) {
+    .wrap{
+        width: 300px;
+    }
+}

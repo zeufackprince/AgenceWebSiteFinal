@@ -1,7 +1,7 @@
 package com.agenceWebSite.AgenceWedSite.model;
 
 import com.agenceWebSite.AgenceWedSite.model.Enums.BelongingType;
-import com.agenceWebSite.AgenceWedSite.model.Enums.Locations;
+import com.agenceWebSite.AgenceWedSite.model.Enums.Cities;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,12 +26,10 @@ public class Belongings {
 
     private String dimension;
 
-    private Locations localisation;
+    private Cities localisation;
 
     private double prix;
-    
-//    @Lob
-//    private List<byte[]> images;
+
     private String images;
 
     @OneToOne(mappedBy = "bienImmobilier")

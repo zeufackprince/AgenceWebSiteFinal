@@ -6,6 +6,7 @@ import com.agenceWebSite.AgenceWedSite.Service.BelongingService;
 import com.agenceWebSite.AgenceWedSite.model.Belongings;
 import com.agenceWebSite.AgenceWedSite.model.Enums.BelongingType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.web.bind.annotation.*;
 
 import javax.management.relation.RelationNotFoundException;
@@ -42,8 +43,8 @@ public class BelongingController {
      * @return the belongings
      * @throws RelationNotFoundException the relation not found exception
      */
-    @PostMapping(path = "/belongings/create")
-    public Belongings createBienImmobilier(@RequestBody Belongings request) throws RelationNotFoundException {
+    @PostMapping(path = "/agent/belongings/create")
+    public Belongings createBienImmobilier(@Payload @RequestBody Belongings request) throws RelationNotFoundException {
 
         return belongingService.createBienImmobilier(request);
     }
@@ -53,7 +54,7 @@ public class BelongingController {
      *
      * @return the belongings
      */
-    @GetMapping(path = "/belongings/all")
+    @GetMapping(path = "/agent/belongings/all")
     public List<Belongings> getBelongings()
     {
         return this.belongingService.getAll();
@@ -66,7 +67,7 @@ public class BelongingController {
      * @param type the type
      * @return the belonging by type
      */
-    @GetMapping(path = "/belongings/{type}")
+    @GetMapping(path = "/agent/belongings/{type}")
     public Optional<List<Belongings>> getBelongingByType(@PathVariable BelongingType type)
     {
         return this.belongingService.getBelongingByType(type);
@@ -78,7 +79,7 @@ public class BelongingController {
      * @param id the id
      * @return the a belongings
      */
-    @GetMapping(path = "/belongings/{id}")
+    @GetMapping(path = "/agent/belongings/{id}")
     public Optional<Belongings> getABelongings(@PathVariable Long id)
     {
         return this.belongingService.getAbelonging(id);
@@ -92,7 +93,7 @@ public class BelongingController {
      * @param request the request
      * @return the response entity
      */
-    @PutMapping("/belongings/{id}")
+    @PutMapping("/agent/belongings/{id}")
     public ResponseEntity<?> updateBelonging(@PathVariable Long id, @RequestBody Belongings request) {
         return this.belongingService.updateBelonging(id, request);
     }

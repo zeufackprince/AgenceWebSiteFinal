@@ -32,8 +32,7 @@ public class Publication {
 
     private String titre;
     private String description;
-//    @Lob
-//    private List<byte[]> images;
+
 
     private String images;
 
@@ -42,8 +41,6 @@ public class Publication {
     @JoinColumn(name = "bien_id")
     private Belongings bienImmobilier;
 
-//    @OneToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "user_id")
-//    private User user;
+
     
 }

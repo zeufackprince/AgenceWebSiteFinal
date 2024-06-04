@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -32,8 +34,15 @@ public class User {
     @Column(name = "username")
     private String username;
 
+    @Column(name = "telephone_num")
+    private Integer telephone;
+
     @Column(name = "password")
-    private String password; 
+    private String password;
+
+    @Lob
+    @Basic(fetch = FetchType.LAZY) // Improve performance for large images
+    private byte[] imageData;
 
     @Enumerated(value = EnumType.STRING)
     @Column(nullable = true)
@@ -41,6 +50,24 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private List<Belongings> belongings;
+
+    /**
+     * Gets telephone.
+     *
+     * @return the telephone
+     */
+    public Integer getTelephone() {
+        return telephone;
+    }
+
+    /**
+     * Sets telephone.
+     *
+     * @param telephone the telephone
+     */
+    public void setTelephone(Integer telephone) {
+        this.telephone = telephone;
+    }
 
 
 }

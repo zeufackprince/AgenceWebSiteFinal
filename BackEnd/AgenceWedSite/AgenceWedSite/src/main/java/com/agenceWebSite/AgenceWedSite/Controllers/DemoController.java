@@ -2,12 +2,14 @@ package com.agenceWebSite.AgenceWedSite.Controllers;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
  * The type Demo controller.
  */
 @RestController
+@RequestMapping("/api")
 public class DemoController {
 
     /**
@@ -15,7 +17,7 @@ public class DemoController {
      *
      * @return the response entity
      */
-    @GetMapping("/price")
+    @GetMapping("/users/home")
     public ResponseEntity<String> home(){
         return ResponseEntity.ok("Welcome home page prince");
     }
@@ -25,7 +27,7 @@ public class DemoController {
      *
      * @return the response entity
      */
-    @GetMapping("/user")
+    @GetMapping("/users")
     public ResponseEntity<String> user(){
         return ResponseEntity.ok("Welcome user");
     }
@@ -38,5 +40,10 @@ public class DemoController {
     @GetMapping("/admin")
     public ResponseEntity<String> admin(){
         return ResponseEntity.ok("Welcome admin!!");
+    }
+
+    @GetMapping("/agent")
+    public ResponseEntity<String> agent(){
+        return ResponseEntity.ok("Welcome agent!!");
     }
 }

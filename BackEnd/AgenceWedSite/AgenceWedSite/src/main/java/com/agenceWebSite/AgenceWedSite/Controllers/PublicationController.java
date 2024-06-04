@@ -49,7 +49,7 @@ public class PublicationController {
      * @param request the request
      * @return the response entity
      */
-    @PostMapping("/publications/create")
+    @PostMapping("/agent/publications/create")
     public ResponseEntity<Publication> createPublication(@RequestBody Publication request) {
         // Validate user role (ADMIN or AGENT)
 
@@ -95,7 +95,7 @@ public class PublicationController {
      *
      * @return the publication
      */
-    @GetMapping("/publications/getAll")
+    @GetMapping("/agent/publications/getAll")
     public List<Publication> getPublication()
     {
         return this.publicationRepository.findAll();

@@ -4,6 +4,7 @@ import '../root.css';
 import avatar from '../../pages/UserProfile/profilImages/avatar.svg';
 import { FaBars, FaSearch, FaTimes, FaPen, FaHeart } from 'react-icons/fa';
 import { NavLink, Link } from "react-router-dom";
+import '../Search/Search.css'
 
 function Header() {
     const navLinksRef = useRef(null);
@@ -40,26 +41,8 @@ function Header() {
             }
         };
 
-        const slideMenu = () => {
-            if (navLinksRef.current) {
-                navLinksRef.current.classList.toggle('showMenu');
-            }
-        };
-
-
       
-        // Affichage de l'edition du profile
-        const activeProfile = () => {
-            if (profileContainer.current) {
-                profileContainer.current.classList.toggle('activeProfile');
-            }
-        };
-
-        const closeProfile = () => {
-            if (profileContainer.current) {
-                profileContainer.current.classList.remove('activeProfile');
-            }
-        };
+       
 
         listMenu.forEach(item => {
             item.addEventListener('click', closeMenu);
@@ -111,7 +94,7 @@ function Header() {
                             <button className="loginLink" onClick={() => showForm()}><span>Se connecter</span></button>
                         </ul>
                         <button className="searchBtn">
-                            <a href="#"><FaSearch className="fa-solid faSearch" /></a>
+                            <Link to='/rechercher' href="#"><FaSearch className="fa-solid faSearch" /></Link>
                         </button>
                     </div>
                     <div className="profil">

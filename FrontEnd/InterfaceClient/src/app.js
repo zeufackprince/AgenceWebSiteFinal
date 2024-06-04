@@ -5,7 +5,10 @@ import Acceuil from "./pages/Accueil/Acceuil";
 import Footer from "./components/Footer/Footer";
 import UserProfile from "./pages/UserProfile/UpdateUserProfile/UserProfile";
 import Favoris from "./components/Favoris/Favoris";
+import Search from "./components/Search/Search";
 import DetailBien from "./pages/DetailBien/DetailBien";
+
+
 
 class App extends React.Component {
     constructor(props) {
@@ -67,6 +70,8 @@ class App extends React.Component {
                             } 
                         />
                         <Route path="/detail/:title" element = {<DetailBien/>}/>
+                        
+                        <Route path="/rechercher" element={<Search/>}/>
                     </Routes>
                     <Footer />
                 </BrowserRouter>

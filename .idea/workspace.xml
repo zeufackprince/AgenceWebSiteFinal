@@ -5,15 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d4fc906-aaa2-434a-9a02-59437d937e25" name="Changes" comment="Agent and Admin interface">
-      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Controllers/NotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Controllers/NotificationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Service/BelongingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Service/BelongingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Service/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Service/NotificationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Notification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Publication.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Publication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/InterfaceClient/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/InterfaceClient/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/InterfaceClient/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/InterfaceClient/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/AgencyWebSiteApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/config/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/config/JWTAuthFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/controller/BelongingController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/controller/DemoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/controller/NotificationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/controller/PublicationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/controller/UserManagementController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/dto/ReqRes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/Belongings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/Enums/BelongingType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/Enums/Cities.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/Enums/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/Notification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/OurUsers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/Publication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/repository/BelongingRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/repository/NotificationRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/repository/PublicationRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/service/BelongingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/service/JWTUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/service/NotificationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/service/OurUserDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/java/com/agenceWebSite/AgenceWebSite/service/UsersManagementService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWebSite/src/test/java/com/agenceWebSite/AgenceWebSite/AgencyWebSiteApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +180,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Controllers/UserController.java</url>
+          <url>file://$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Controllers/UserController.java</url>
           <line>131</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>

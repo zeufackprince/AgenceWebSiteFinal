@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0d4fc906-aaa2-434a-9a02-59437d937e25" name="Changes" comment="Agent and Admin interface">
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Controllers/NotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Controllers/NotificationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Service/BelongingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Service/BelongingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Service/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Service/NotificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Publication.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Publication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/InterfaceClient/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/InterfaceClient/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/InterfaceClient/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/InterfaceClient/package.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/Prince" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectId" id="2hHS3CMcFAASN9dZvu4KuFbPz2o" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/gradle-8.7/bin&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.packagesearch.PackageSearchGeneralConfigurable&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;,
+      &quot;module&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Prince Levis\Desktop\Project\Project\PROJECT\FrontEnd\interfaceAgent&amp;Admin" />
+      <recent name="C:\Users\Prince Levis\Desktop\Project\Project\PROJECT\BackEnd\AgenceWedSite\AgenceWedSite\src\main\resources\static" />
+      <recent name="C:\Users\Prince Levis\Desktop\Project\Project\PROJECT\BackEnd\AgenceWedSite\AgenceWedSite\src\main\java\com\agenceWebSite\AgenceWedSite" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Prince Levis\AppData\Roaming\Subversion</configuration>
+    <myIsUseDefaultProxy>true</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0d4fc906-aaa2-434a-9a02-59437d937e25" name="Changes" comment="" />
+      <created>1717202631218</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1717202631218</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Agent and Admin interface">
+      <option name="closed" value="true" />
+      <created>1717538778063</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717538778063</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Prince" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Agent and Admin interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agent and Admin interface" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BackEnd/AgenceWedSite/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Controllers/UserController.java</url>
+          <line>131</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

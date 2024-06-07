@@ -12,12 +12,11 @@ const quartiersParVille = {
 const Seacrh = () => {
     const [typeLogement, setTypeLogement] = useState('');
     const [ville, setVille] = useState('');
-    const [quartier, setQuartier] = useState('');
-    const [budget, setBudget] = useState('');
+    const [Budget, setBudget] = useState('');
+   
 
     const handleVilleChange = (e) => {
         setVille(e.target.value);
-        setQuartier(''); // Reinitialise le quartier quand on change de ville
     };
 
     const handleSubmit = (e) => {
@@ -25,8 +24,8 @@ const Seacrh = () => {
         //
         console.log('Type de Logement:', typeLogement);
         console.log('Ville:', ville);
-        console.log('Quartier:', quartier);
-        console.log('Budget:', budget);
+        console.log('Budget:', Budget);
+        
     };
 
     return (
@@ -38,9 +37,9 @@ const Seacrh = () => {
                     <label>Type de Logement :</label>
                     <select value={typeLogement} onChange={(e) => setTypeLogement(e.target.value)} className='logementChoise' required>
                         <option value=""></option>
-                        <option value="studio">Studio</option>
-                        <option value="appartement">Appartement</option>
-                        <option value="chambre">Chambre</option>
+                        <option value="STUDIO">Studio</option>
+                        <option value="APPARTEMENT">Appartement</option>
+                        <option value="CHAMBRE">Chambre</option>
                     </select>
                 </div>
 
@@ -48,31 +47,40 @@ const Seacrh = () => {
                     <label>Ville :</label>
                     <select value={ville} onChange={handleVilleChange} required>
                         <option value=""></option>
-                        <option value="Douala">Douala</option>
-                        <option value="Yaoundé">Yaoundé</option>
-                        <option value="Bafoussam">Bafoussam</option>
-                        <option value="Dschang">Dschang</option>
+                        <option value="DOUALA">Douala</option>
+                        <option value="YAOUNDE">Yaoundé</option>
+                        <option value="BAFOUSSAM">Bafoussam</option>
+                        <option value="DSCHANG">Dschang</option>
+                        <option value="LIMBE">Limbe</option>
+                        <option value="BUEA">Buea</option>
+                        <option value="KRIBI">Kribi</option>
+                        <option value="FOUMBAN">Foumban</option>
+                        <option value="MAROUA">Maroua</option>
                     </select>
                 </div>
 
-                <div className='quartierContainer'>
-                    <label>Quartier :</label>
-                    <select value={quartier} onChange={(e) => setQuartier(e.target.value)} required>
-                        <option value=""></option>
-                        {ville && quartiersParVille[ville].map((q, index) => (
-                            <option key={index} value={q}>{q}</option>
-                        ))}
-                    </select>
-                </div>
+           
 
                 <div className='budget'>
-                    <label>Budget (Fcfa) :</label>
+                    {/*<h2>Budjet (Fcfa)</h2>
+                    <label>Min</label>
                     <input
                         type="number"
-                        value={budget}
-                        onChange={(e) => setBudget(e.target.value)}
+                        value={minBudget}
+                        onChange={(e) => setminBudget(e.target.value)}
                         required
                     />
+                    <label>Max</label>
+                    <input type='numer' value={maxBudget} onChange={(e) => setmaxBudget(e.target.value)}
+                    required/>*/}
+
+                    <label>Budget (Fcfa) :</label>
+                    <select value={Budget} onChange={(e) => setBudget(e.target.value)} className='budgetChoice' required>
+                        <option value=""></option>
+                        <option value={20000}>0-20000</option>
+                        <option value={50000}>20001-50000</option>
+                        <option value={100000}>50001-100000</option>
+                    </select>
                 </div>
 
                 <button type="submit" className='SearchBtn'>Rechercher</button>

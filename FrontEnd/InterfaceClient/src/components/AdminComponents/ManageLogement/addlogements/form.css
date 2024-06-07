@@ -1,0 +1,109 @@
+body, html {
+  /* display: flex; */
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+}
+
+/* .container form {
+  display: flex;
+} */
+
+.container form fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  padding: 15px 30px;
+  border: 1px solid black;
+  gap: 1rem;
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+}
+
+.container form fieldset .top {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px 30px;
+  background: #ff5c5c;
+  border: 1px inset #868686;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.container form .title h2 {
+  font-size: 28px;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  color: #110303;
+}
+
+.container form fieldset .top .content {
+  display: flex;
+  flex: 1 1 50%;
+  flex-wrap: wrap;
+}
+
+.container form fieldset .top .content .form-input, .container form fieldset .top .content .form-select {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 20px;
+}
+
+.container form fieldset .top .content .form-input label,  .container form fieldset .top .content .form-select label{
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #080707;
+}
+
+.container form fieldset .top .content .form-input input, .container form fieldset .top .content .form-select select, .container form fieldset .top .content .form-input textarea {
+  padding: 15px 30px;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 2px;
+  background: #fafafa;
+}
+
+textarea {
+  resize: none;
+}
+
+.container form fieldset .bottom {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  padding: 15px 30px;
+  align-items: center;
+}
+
+.container form fieldset .bottom input {
+  padding: 15px 30px;
+  font-size: 20px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  outline: none;
+  font-weight: bold;
+  border: 1px solid black;
+  color: #110303;
+  width: 250px;
+  border-radius: 1px;
+  background: #ff5c5c;
+}

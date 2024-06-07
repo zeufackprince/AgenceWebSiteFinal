@@ -1,0 +1,92 @@
+menu {
+  
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    gap: 4rem;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+}
+
+menu img {
+    width: 3em;
+    padding-top: 25px;
+}
+
+menu ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+ 
+menu ul li {
+    list-style: none;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: 0 8px;
+    padding: 0 10px;
+}
+ 
+menu ul li a {
+    font-size: 24px;
+    color: #8c8a95;
+    text-decoration: none;
+    transition: all 0.3s;
+    padding: 2px 5px;
+    display: flex;
+    align-items: center;
+}
+menu ul li a span{
+    padding: 0 8px;
+}
+menu ul li a::before {
+    position: absolute;
+    content: '';
+    top: 10px;
+    left: -15px;
+    width: 0px;
+    height: 20px;
+    background: #f83737;;
+    border-radius: 50%;
+}
+
+menu ul li:hover a {
+    color: #f83737;
+}
+
+menu ul li:hover a::before {
+    width: 20px;
+    transition: all 0.3s;
+}
+
+menu ul li.active a{
+    color: #f83737;
+}
+
+menu ul li.active a::before {
+    width: 20px;
+    transition: all 0.3s;
+}
+
+menu ul.last-Menu {
+    margin-top: auto;
+}
+
+@media only screen and (max-width : 768px) {
+    menu {
+        max-width: 68px !important;
+    }
+    menu ul li a span{
+        display: none;
+    }
+
+    menu ul li a::before {
+        top: 5px;
+    }
+    
+}

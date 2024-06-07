@@ -1,0 +1,47 @@
+.mainList {
+    background: #f1f1f1;
+    width: 100%;
+    position: relative;
+    padding: 20px 10px;
+  }
+  
+  .mainList h1 {
+    display: inline;
+    font-family: serif;
+  }
+  
+  .mainList table {
+    margin-top: 2rem;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .mainList table th {
+    background: #f83737;
+    border: 1px solid black;
+    border-radius: 0.3em;
+    color: #1f1f22;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .mainList table tr td{
+    text-align: center;
+    border: 1px solid black;
+  }
+  
+  .mainList table tr td.btn-action {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .mainList table tr td.btn-action i {
+    font-size: 20px;
+    width: 40px;
+    border-radius: 0.5em;
+    color: #0c0b0f;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .mainList table tr td.btn-action i:hover {
+    color: #f83737;
+  }

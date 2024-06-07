@@ -117,6 +117,7 @@ body{
 .profil img {
     width: 64px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .profil p{

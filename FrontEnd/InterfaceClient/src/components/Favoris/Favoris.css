@@ -14,11 +14,14 @@
 }
 .bienImmoFav{
     display: flex;
-    justify-content:space-between;
     align-items: center;
     padding: 10px;
-
     cursor: pointer;
+}
+.bienImmoFav .moreDetails{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 .bienImmoFav:hover{
     background: rgb(215, 215, 215);
@@ -49,34 +52,17 @@
 .bienImmoFav .removeFav:hover{
     color: var(--fuscha);
 }
-.bienImmoFav .moreFav{
-    padding: 10px;
-    color: var(--white);
-    background: var(--fuscha);
-    font-weight: bold;
-    border-radius: 12px;
-    border: 1px solid var(--fuscha);
-    cursor: pointer;
-    transition: 0.2s;
-}
-.bienImmoFav .moreFav:hover{
-    background: none;
-    color: var(--lignt);
-}
+
 @media screen and (max-width:850px) {
     .bienImmoFav img{
         width: 40%;
     }
     .bienImmoFav .titreArticleFav{
-        font-size: 15px;
+        font-size: 12px;
     }
     .bienImmoFav .priceFav{
-        font-size: 15px;
+        font-size: 12px;
     }
-    .bienImmoFav .removeFav{
-        font-size: 15px;
-    }
-    .bienImmoFav .moreFav{
-        font-size: 10px;
-    }
+    
+
 }

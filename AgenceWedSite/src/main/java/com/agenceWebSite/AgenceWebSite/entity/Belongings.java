@@ -8,6 +8,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 /**
  * The type Belongings.
  */
@@ -37,4 +39,6 @@ public class Belongings {
 
     @ManyToOne
     private OurUsers user;
+
+    private LocalDate dateUplaod;
 }

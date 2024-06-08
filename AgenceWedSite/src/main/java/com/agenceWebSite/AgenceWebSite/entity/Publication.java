@@ -1,5 +1,6 @@
 package com.agenceWebSite.AgenceWebSite.entity;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import jakarta.persistence.*;
@@ -21,11 +22,10 @@ public class Publication {
     private Long id;
 
     private String titre;
+
     private String description;
 
-
     private String images;
-
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "bien_id")
@@ -33,5 +33,7 @@ public class Publication {
 
     @OneToMany
     private List<Notification> notification;
+
+    private LocalDate dateUplaod;
     
 }

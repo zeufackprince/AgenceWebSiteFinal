@@ -58,7 +58,7 @@ public class UserManagementController {
      *
      * @return the response entity
      */
-    @GetMapping("/admin/get-all-users")
+    @GetMapping("/api/admin/get-all-users")
     public ResponseEntity<ReqRes> getAllUsers(){
         return ResponseEntity.ok(usersManagementService.getAllUsers());
 
@@ -70,7 +70,7 @@ public class UserManagementController {
      * @param userId the user id
      * @return the response entity
      */
-    @GetMapping("/admin/get-users/{userId}")
+    @GetMapping("/api/admin/get-users/{userId}")
     public ResponseEntity<ReqRes> getUSerByID(@PathVariable Long userId){
         return ResponseEntity.ok(usersManagementService.getUsersById(userId));
 
@@ -82,7 +82,7 @@ public class UserManagementController {
      * @param role the role
      * @return the users by role
      */
-    @GetMapping("/admin/users/{role}")
+    @GetMapping("/api/admin/users/{role}")
     public ResponseEntity<List<OurUsers>> getUsersByRole(@PathVariable Role role) {
         return ResponseEntity.ok(usersManagementService.getUsersByRole(role).getBody());
     }
@@ -94,7 +94,7 @@ public class UserManagementController {
      * @param reqres the reqres
      * @return the response entity
      */
-    @PutMapping("/admin/update/{userId}")
+    @PutMapping("/api/admin/update/{userId}")
     public ResponseEntity<ReqRes> updateUser(@PathVariable Long userId, @RequestBody OurUsers reqres){
         return ResponseEntity.ok(usersManagementService.updateUser(userId, reqres));
     }
@@ -104,7 +104,7 @@ public class UserManagementController {
      *
      * @return the response entity
      */
-    @GetMapping("/adminuser/get-profile")
+    @GetMapping("/api/adminuser/get-profile")
     public ResponseEntity<ReqRes> getMyProfile(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String email = authentication.getName();
@@ -118,7 +118,7 @@ public class UserManagementController {
      * @param userId the user id
      * @return the response entity
      */
-    @DeleteMapping("/admin/delete/{userId}")
+    @DeleteMapping("/api/admin/delete/{userId}")
     public ResponseEntity<ReqRes> deleteUSer(@PathVariable Long userId){
         return ResponseEntity.ok(usersManagementService.deleteUser(userId));
     }

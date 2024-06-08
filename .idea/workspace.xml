@@ -5,28 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fdcc3f1-5fb8-49e9-b68d-53b7f82d296f" name="Changes" comment="update">
-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/AgenceWedSiteApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/AgenceWedSiteApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Controllers/BelongingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Controllers/BelongingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Controllers/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Controllers/DemoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Controllers/PublicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Controllers/PublicationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Repository/BelongingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Repository/BelongingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Repository/PublicationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Repository/PublicationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Service/BelongingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Service/BelongingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Belongings.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/model/Belongings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Enums/BelongingType.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/model/Enums/BelongingType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Enums/Locations.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/model/Enums/Locations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Enums/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/model/Enums/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/model/Notification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Publication.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/model/Publication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/test/java/com/agenceWebSite/AgenceWedSite/AgenceWedSiteApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/test/java/com/agenceWebSite/AgenceWebSite/AgenceWedSiteApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/controller/UserManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/controller/UserManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/Belongings.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/Belongings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/OurUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/OurUsers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/Publication.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/Publication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -34,17 +33,35 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectId" id="2hZvYqlyVd51nJTwIdJViHlzyhE" />
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "Prince"
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Prince&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9fdcc3f1-5fb8-49e9-b68d-53b7f82d296f" name="Changes" comment="update" />
+      <created>1717814470435</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1717814470435</updated>
+    </task>
     <servers />
   </component>
 </project>

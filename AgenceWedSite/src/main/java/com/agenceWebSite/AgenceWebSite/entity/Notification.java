@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.Set;
 
 /**
@@ -39,6 +40,7 @@ public class Notification {
     @ManyToOne
     private Publication publication;
 
+    private LocalDate dateUplaod;
     /**
      * Gets recipient ids.
      *

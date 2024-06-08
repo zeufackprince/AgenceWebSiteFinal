@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fdcc3f1-5fb8-49e9-b68d-53b7f82d296f" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
+    <list default="true" id="9fdcc3f1-5fb8-49e9-b68d-53b7f82d296f" name="Changes" comment="Added file management(images)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/controller/UserManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/controller/UserManagementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/Belongings.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/Belongings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/Notification.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/OurUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/OurUsers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/Publication.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/entity/Publication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +56,19 @@
       <option name="presentableId" value="Default" />
       <updated>1717814470435</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added file management(images)">
+      <option name="closed" value="true" />
+      <created>1717833918674</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717833918674</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added file management(images)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added file management(images)" />
   </component>
 </project>

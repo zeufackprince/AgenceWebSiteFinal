@@ -1,6 +1,7 @@
 package com.agenceWebSite.AgenceWebSite.entity;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import jakarta.persistence.*;
@@ -34,6 +35,12 @@ public class Publication {
     @OneToMany
     private List<Notification> notification;
 
-    private LocalDate dateUplaod;
+    @Column(updatable = false)
+    private Date createdAt;
+
+    @PrePersist
+    public void setCreatedAt() {
+        this.createdAt = new Date();
+    }
     
 }

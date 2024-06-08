@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.Set;
 
 /**
@@ -40,7 +41,13 @@ public class Notification {
     @ManyToOne
     private Publication publication;
 
-    private LocalDate dateUplaod;
+    @Column(updatable = false)
+    private Date createdAt;
+
+    @PrePersist
+    public void setCreatedAt() {
+        this.createdAt = new Date();
+    }
     /**
      * Gets recipient ids.
      *

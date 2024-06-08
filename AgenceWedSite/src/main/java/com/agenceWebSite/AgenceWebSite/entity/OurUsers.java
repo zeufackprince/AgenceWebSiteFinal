@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.time.LocalDate;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -57,12 +58,16 @@ public class OurUsers implements UserDetails {
     @OneToMany(mappedBy = "user")
     private List<Belongings> belongings;
 
-    @CreatedDate
-    private LocalDate dateUplaod;
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));
+    }
+    @Column(updatable = false)
+    private Date createdAt;
+
+    @PrePersist
+    public void setCreatedAt() {
+        this.createdAt = new Date();
     }
 
     @Override

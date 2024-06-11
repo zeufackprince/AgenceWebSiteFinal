@@ -1,3 +1,4 @@
+//Ici se trouve les biens ajoutés en favori
 import React from 'react';
 import './Favoris.css'
 import '../root.css'

@@ -1,0 +1,87 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"9fdcc3f1-5fb8-49e9-b68d-53b7f82d296f\" name=\"Changes\" comment=\"update\">\r\n      <change beforePath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/AgenceWedSiteApplication.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/AgenceWedSiteApplication.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Controllers/BelongingController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Controllers/BelongingController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Controllers/DemoController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Controllers/DemoController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Controllers/PublicationController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Controllers/PublicationController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Controllers/UserController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Controllers/UserController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Repository/BelongingRepository.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Repository/BelongingRepository.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Repository/PublicationRepository.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Repository/PublicationRepository.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Repository/UserRepository.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Repository/UserRepository.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Service/BelongingService.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Service/BelongingService.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Belongings.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/model/Belongings.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Enums/BelongingType.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/model/Enums/BelongingType.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Enums/Locations.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/model/Enums/Locations.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Enums/Role.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/model/Enums/Role.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Notification.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/model/Notification.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Publication.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/model/Publication.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/User.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/model/User.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/AgenceWedSite/src/test/java/com/agenceWebSite/AgenceWedSite/AgenceWedSiteApplicationTests.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/AgenceWedSite/src/test/java/com/agenceWebSite/AgenceWebSite/AgenceWedSiteApplicationTests.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <OptionsSetting value=\"false\" id=\"Update\" />\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"git-widget-placeholder\": \"Prince\"\r\n  }\r\n}]]></component>\r\n  <component name=\"TaskManager\">\r\n    <servers />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision adce2dddac88e38b3c6d8b4f4aa2769cda519dec)
++++ b/.idea/workspace.xml	(date 1717708644434)
+@@ -4,24 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="9fdcc3f1-5fb8-49e9-b68d-53b7f82d296f" name="Changes" comment="update">
+-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/AgenceWedSiteApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/AgenceWedSiteApplication.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Controllers/BelongingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Controllers/BelongingController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Controllers/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Controllers/DemoController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Controllers/PublicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Controllers/PublicationController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Controllers/UserController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Repository/BelongingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Repository/BelongingRepository.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Repository/PublicationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Repository/PublicationRepository.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Repository/UserRepository.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/Service/BelongingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Service/BelongingService.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Belongings.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/model/Belongings.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Enums/BelongingType.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/model/Enums/BelongingType.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Enums/Locations.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/model/Enums/Locations.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Enums/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/model/Enums/Role.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/model/Notification.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/Publication.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/model/Publication.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWedSite/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/model/User.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/AgenceWedSite/src/test/java/com/agenceWebSite/AgenceWedSite/AgenceWedSiteApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/AgenceWedSite/src/test/java/com/agenceWebSite/AgenceWebSite/AgenceWedSiteApplicationTests.java" afterDir="false" />
++    <list default="true" id="9fdcc3f1-5fb8-49e9-b68d-53b7f82d296f" name="Changes" comment="updated">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -29,6 +13,7 @@
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
+   <component name="Git.Settings">
++    <option name="PUSH_AUTO_UPDATE" value="true" />
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+         <entry key="$PROJECT_DIR$" value="master" />
+@@ -41,10 +26,40 @@
+   </component>
+   <component name="PropertiesComponent"><![CDATA[{
+   "keyToString": {
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+     "git-widget-placeholder": "Prince"
+   }
+ }]]></component>
++  <component name="RecentsManager">
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\Prince Levis\Desktop\Project\Project\PROJECT\AgenceWedSite\src\main\java\com\agenceWebSite\AgenceWebSite" />
++    </key>
++  </component>
+   <component name="TaskManager">
++    <task id="LOCAL-00001" summary="updated">
++      <option name="closed" value="true" />
++      <created>1717708315232</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1717708315232</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="updated" />
++    <option name="LAST_COMMIT_MESSAGE" value="updated" />
++  </component>
+ </project>
+\ No newline at end of file

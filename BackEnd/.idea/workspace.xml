@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="41c5498e-1bf9-4ff5-9efe-f1e9b58ad80c" name="Changes" comment="code updated with a more relaible file management and DTO for a better understanding and appropriate way of writing code" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="Prince" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2hirKQcJiJpANZbqOGYoctviZs0" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Prince",
+    "last_opened_file_path": "C:/Users/Prince Levis/Desktop/Project/Project/PROJECT/BackEnd/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Service",
+    "settings.editor.selected.configurable": "http.proxy"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Prince Levis\Desktop\Project\Project\PROJECT\BackEnd\AgenceWedSite\src\main\java\com\agenceWebSite\AgenceWebSite\Service" />
+      <recent name="C:\Users\Prince Levis\Desktop\Project\Project\PROJECT\BackEnd\AgenceWedSite\src\main\java\com\agenceWebSite\AgenceWebSite\Models" />
+      <recent name="C:\Users\Prince Levis\Desktop\Project\Project\PROJECT\BackEnd\AgenceWedSite\src\main\java\com\agenceWebSite\AgenceWebSite\DTO" />
+      <recent name="C:\Users\Prince Levis\Desktop\Project\Project\PROJECT\BackEnd\AgenceWedSite\src\main\java\com\agenceWebSite\AgenceWebSite\Controller" />
+      <recent name="C:\Users\Prince Levis\Desktop\Project\Project\PROJECT\BackEnd\AgenceWedSite\src\main\java\com\agenceWebSite\AgenceWebSite\Exceptions" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.agenceWebSite.AgenceWebSite.Exceptions" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Prince Levis\AppData\Roaming\Subversion</configuration>
+    <myIsUseDefaultProxy>true</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="41c5498e-1bf9-4ff5-9efe-f1e9b58ad80c" name="Changes" comment="" />
+      <created>1717202631218</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1717202631218</updated>
+    </task>
+    <task id="LOCAL-00001" summary="cool">
+      <option name="closed" value="true" />
+      <created>1718087756864</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1718087756864</updated>
+    </task>
+    <task id="LOCAL-00002" summary="code updated with a more relaible file management and DTO for a better understanding and appropriate way of writing code">
+      <option name="closed" value="true" />
+      <created>1719920217732</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1719920217732</updated>
+    </task>
+    <task id="LOCAL-00003" summary="code updated with a more relaible file management and DTO for a better understanding and appropriate way of writing code">
+      <option name="closed" value="true" />
+      <created>1719920259107</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1719920259107</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+        <entry key="Paths">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="dir:C:/Users/Prince Levis/Desktop/Project/Project/PROJECT/BackEnd" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/Users/Prince Levis/Desktop/Project/Project/PROJECT/BackEnd" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="cool" />
+    <MESSAGE value="code updated with a more relaible file management and DTO for a better understanding and appropriate way of writing code" />
+    <option name="LAST_COMMIT_MESSAGE" value="code updated with a more relaible file management and DTO for a better understanding and appropriate way of writing code" />
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
+  </component>
+</project>

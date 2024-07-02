@@ -43,14 +43,16 @@
     margin: auto 10px;
 }
 .bienImmoFav .removeFav{
-    font-size: 20px;
+    width: 50px;
     font-weight: bold;
     padding: 10px;
     color: var(--lignt);
     cursor: pointer;
+    border-radius: 50%;
 }
 .bienImmoFav .removeFav:hover{
-    color: var(--fuscha);
+    background: var(--fuscha);
+    
 }
 
 @media screen and (max-width:850px) {

@@ -1,8 +1,8 @@
 //Ici se trouve les biens ajoutés en favori
 import React from 'react';
 import './Favoris.css'
-import '../root.css'
-import { FaTimes } from 'react-icons/fa';
+import '../../root.css'
+import x_cross from './x_cross.svg'
 import { Link } from 'react-router-dom';
 
 
@@ -19,12 +19,12 @@ const Favoris = ({ favoris, removeFavori }) => {
                     favoris.map(bien => (
                        
                             <div key={bien.id} className="bienImmoFav">
-                                <Link to='/detail' className='moreDetails'>
+                                <Link to={`/detail/${bien.id}`} className='moreDetails'>
                                     <img src={bien.img} alt={bien.title} />
                                     <p className="titreArticleFav">{bien.title}</p>
                                     <p className="priceFav">{bien.price}</p>
                                 </Link>
-                                <FaTimes className="removeFav" onClick={() => removeFavori(bien.id)}/>
+                                <img src={x_cross} className="removeFav" onClick={() => removeFavori(bien.id)}/>
                             </div>
                        
                         

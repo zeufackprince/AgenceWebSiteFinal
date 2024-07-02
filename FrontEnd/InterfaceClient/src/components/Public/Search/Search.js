@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../components/root.css'
+import '../../../components/root.css'
 
 
 const quartiersParVille = {

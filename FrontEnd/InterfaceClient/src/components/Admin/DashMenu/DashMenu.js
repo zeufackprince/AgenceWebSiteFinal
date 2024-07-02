@@ -27,10 +27,10 @@ function DashMenu() {
        <h1 className='logo'>IMMOBILIUS</h1>
 
         <ul id="main-Menu">
-          <li><Link to='/dashboard'><FaBorderAll /><span>Dashboard</span> </Link></li>
-          <li><Link to='/crud-app-clients'><FaUsers /><span>Clients</span></Link></li>
-          <li><Link to='/'><FaEnvelope /><span>Notifications</span></Link></li>
-          <li><Link to='/crud-app-logements'><FaBuilding /><span>Logements</span></Link></li>
+          <li><Link to='/admin/dashboard'><FaBorderAll /><span>Dashboard</span> </Link></li>
+          <li><Link to='/admin/crud-client'><FaUsers /><span>Clients</span></Link></li>
+          <li><Link to='/admin/'><FaEnvelope /><span>Notifications</span></Link></li>
+          <li><Link to='/admin/crud-app-logements'><FaBuilding /><span>Logements</span></Link></li>
           <li><Link to='/'><FaChartLine /><span>Statistiques</span></Link></li>
         </ul>
 

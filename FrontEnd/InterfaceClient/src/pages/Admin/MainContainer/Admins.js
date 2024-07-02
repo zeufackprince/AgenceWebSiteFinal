@@ -1,12 +1,12 @@
-import Profile1 from '../../../images/dashImg/profile-1.png';
-import Profile2 from '../../../images/dashImg/profile-2.png';
-import Profile3 from '../../../images/dashImg/profile-3.png';
-import Profile4 from '../../../images/dashImg/profile-4.png';
-import Profile5 from '../../../images/dashImg/profile-5.png';
-import Profile6 from '../../../images/dashImg/profile-6.png';
-import Profile7 from '../../../images/dashImg/profile-7.png';
-import Profile8 from '../../../images/dashImg/profile-8.png';
-import Profile9 from '../../../images/dashImg/profile-9.png';
+import Profile1 from '../../../images/Admin/profile-1.png';
+import Profile2 from '../../../images/Admin/profile-2.png';
+import Profile3 from '../../../images/Admin/profile-3.png';
+import Profile4 from '../../../images/Admin/profile-4.png';
+import Profile5 from '../../../images/Admin/profile-5.png';
+import Profile6 from '../../../images/Admin/profile-6.png';
+import Profile7 from '../../../images/Admin/profile-7.png';
+import Profile8 from '../../../images/Admin/profile-8.png';
+import Profile9 from '../../../images/Admin/profile-9.png';
 
 const Admins = [
     {id : 1, admin_name : "Gilles Alain", imgSrc : Profile1},

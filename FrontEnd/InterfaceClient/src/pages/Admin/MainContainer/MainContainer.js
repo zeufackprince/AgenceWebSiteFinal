@@ -1,19 +1,19 @@
 import React from 'react';
 import './MainContainer.css';
 import { Link } from 'react-router-dom';
-import Banner from '../../../images/dashImg/banner.jpg';
+import Banner from '../../../images/Admin/banner.jpg';
 import CardMain from './CardMain.js';
 import MainRightBopttom from './MainRightBopttom.js';
 import MainRightTop from './MainRightTop.js';
 
-import Card1 from '../../../images/dashImg/card-1.jpg';
-import Card2 from '../../../images/dashImg/card-2.jpg';
-import Card3 from '../../../images/dashImg/card-3.jpg';
-import Card4 from '../../../images/dashImg/card-4.jpg';
-import Card5 from '../../../images/dashImg/card-5.jpg';
-import Card6 from '../../../images/dashImg/card-6.jpg';
-import Card7 from '../../../images/dashImg/card-7.jpg';
-import Card8 from '../../../images/dashImg/card-8.jpg';
+import Card1 from '../../../images/Admin/card-1.jpg';
+import Card2 from '../../../images/Admin/card-2.jpg';
+import Card3 from '../../../images/Admin/card-3.jpg';
+import Card4 from '../../../images/Admin/card-4.jpg';
+import Card5 from '../../../images/Admin/card-5.jpg';
+import Card6 from '../../../images/Admin/card-6.jpg';
+import Card7 from '../../../images/Admin/card-7.jpg';
+import Card8 from '../../../images/Admin/card-8.jpg';
 
 function MainContainer() {
     

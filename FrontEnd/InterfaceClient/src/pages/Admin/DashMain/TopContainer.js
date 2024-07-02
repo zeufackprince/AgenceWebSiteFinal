@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import profile from '../../../images/dashImg/profile.jpg';
+import profile from '../../../images/Admin/profile.jpg';
 import { Link } from 'react-router-dom';
 import {
     FaBell,
@@ -43,7 +43,7 @@ function TopContainer() {
           </i>
           <div className="menu-Container" id="menu-Container">
             <ul>
-              <li><Link to='/'>Dashboard</Link></li>
+              <li><Link to='/admin/dashboard'>Dashboard</Link></li>
               <li><Link to='/crud-app-logements'>Logements</Link></li>
               <li><Link to=''>Notifications</Link></li>
               <li><Link to=''>Infos</Link></li>

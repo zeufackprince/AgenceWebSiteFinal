@@ -2,7 +2,6 @@ package com.agenceWebSite.AgenceWebSite.Controller;
 
 import com.agenceWebSite.AgenceWebSite.DTO.ReqRes;
 import com.agenceWebSite.AgenceWebSite.Models.Enums.Role;
-import com.agenceWebSite.AgenceWebSite.Models.OurUsers;
 import com.agenceWebSite.AgenceWebSite.Service.UsersManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,10 +1,7 @@
 import React, {useEffect} from 'react';
 import profile from '../../img/profile.jpg';
 import { Link } from 'react-router-dom';
-import {
-    FaBell,
-    FaChevronDown
-} from "react-icons/fa";
+import { FaBell, FaChevronDown } from "react-icons/fa";
 
 function TopContainer() {
 

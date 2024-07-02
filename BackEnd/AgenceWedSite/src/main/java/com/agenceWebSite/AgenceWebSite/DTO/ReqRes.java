@@ -4,12 +4,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.agenceWebSite.AgenceWebSite.Models.Enums.Role;
 import com.agenceWebSite.AgenceWebSite.Models.OurUsers;
-import jakarta.persistence.Lob;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.sql.Blob;
 import java.util.List;
 
 /**

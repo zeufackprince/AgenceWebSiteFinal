@@ -50,9 +50,9 @@ function Header() {
                     <ul>
                         <FaTimes className="closeMenu" onClick={() => navLinksRef.current.classList.remove('showMenu')} />
                         <li><NavLink to='/'>Acceuil</NavLink></li>
-                        <li><NavLink to='/Acheter'>Acheter</NavLink></li>
-                        <li><NavLink to='/Louer'>Louer</NavLink></li>
-                        <li><NavLink to='/Contact'>Contact</NavLink></li>
+                        <li><NavLink to='/acheter'>Acheter</NavLink></li>
+                        <li><NavLink to='/louer'>Louer</NavLink></li>
+                        <li><NavLink to='/contact'>Contact</NavLink></li>
                         <Link to='/auth/login' className="loginLink"><span>Se connecter</span></Link>
                     </ul>
                     <button className="searchBtn">

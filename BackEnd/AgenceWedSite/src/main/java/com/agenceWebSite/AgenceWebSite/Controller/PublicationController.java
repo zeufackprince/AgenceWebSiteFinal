@@ -15,7 +15,7 @@ public class PublicationController {
 
     private final PublicationService publicationService;
 
-    @PostMapping("/new-publication")
+    @PostMapping("/agent/new-publication")
     public ResponseEntity<PubRes> createPublication(@RequestBody PubRes request) {
 
         PubRes response = this.publicationService.createPublication(request);
@@ -23,7 +23,7 @@ public class PublicationController {
 
     }
 
-    @GetMapping("/get-all-pub")
+    @GetMapping("/user/get-all-pub")
     public ResponseEntity<List<PubRes>> getAllPublication(){
 
         List<PubRes> reponse = this.publicationService.getAllPub();

@@ -143,9 +143,9 @@ public class BelongingsService {
             }
 
             for (MultipartFile file : images) {
-                if (Files.exists(Paths.get(path + File.separator + file.getOriginalFilename()))) {
-                    throw new FileExistsException("File already exists! Please enter another file name!");
-                }
+                // if (Files.exists(Paths.get(path + File.separator + file.getOriginalFilename()))) {
+                //     throw new FileExistsException("File already exists! Please enter another file name!");
+                // }
                 String uploadedFileName = fileController.uploadFileHandler(file);
                 poster.add(uploadedFileName);
                 String posterUrls = baseUrl + "/file/" + uploadedFileName;

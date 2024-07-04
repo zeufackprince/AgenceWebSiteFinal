@@ -32,7 +32,7 @@ public class UsersManagementService {
 
     private final String path ="/images";
 
-    private final String baseUrl = "http://localhost:8080";
+    private final String baseUrl = "http://localhost:1010";
     @Autowired
     private UserRepository usersRepo;
     @Autowired

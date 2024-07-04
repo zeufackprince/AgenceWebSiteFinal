@@ -11,6 +11,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+// import org.springframework.mock.web.MockMultipartFile;
 
 import java.io.IOException;
 import java.util.List;
@@ -23,24 +24,16 @@ public class UserManagementController {
     @Autowired
     private UsersManagementService usersManagementService;
 
-    /**
-     * Regeister response entity.
-     *
-//     * @param reg the reg
-     * @return the response entity
-     */
-//    @PostMapping("/auth/register")
-//    public ResponseEntity<ReqRes> regeister(@RequestBody ReqRes reg){
-//        return ResponseEntity.ok(usersManagementService.register(reg));
-//    }
 
     @PostMapping("/auth/register")
     public ResponseEntity<ReqRes> regeister(@RequestParam(required = false) String name,
                                             @RequestParam(required = false) String email,
                                             @RequestParam(required = false) String password,
                                             @RequestParam(required = false) Integer telephone,
-                                            @RequestParam(required = false)  Role role,
+                                            @RequestParam(required = false) Role role,
                                             @RequestParam(required = false) MultipartFile file) throws IOException {
+        // Check if the file is empty
+        
         ReqRes reg = new ReqRes(name, email, telephone, password, role);
         return new ResponseEntity<>(usersManagementService.register(reg, file), HttpStatus.CREATED);
 

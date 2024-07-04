@@ -27,7 +27,7 @@ public class BelongingsController {
 
     private final UserRepository userRepository;
 
-    @PostMapping("/create-belonging")
+    @PostMapping("/agent/create-belonging")
     @PreAuthorize("hasRole('ADMIN','AGENT')")
     public ResponseEntity<ResBelonging> createBelon(
             @Autowired SecurityContextHolder securityContextHolder,
@@ -48,8 +48,8 @@ public class BelongingsController {
         return  ResponseEntity.ok(reponse);
     }
 
-    @GetMapping("/get-All-Belongings")
-    @PreAuthorize("hasRole('ADMIN','AGENT')")
+    @GetMapping("/user/get-All-Belongings")
+    // @PreAuthorize("hasRole('ADMIN','AGENT')")
     public ResponseEntity<List<ResBelonging>> getAllBelongings() throws SQLException {
 
         List<ResBelonging> response = this.belongingsService.getAllBelongings();
@@ -59,7 +59,7 @@ public class BelongingsController {
 
 
 
-    @PutMapping("/update/{belongingId}")
+    @PutMapping("/agent/update/{belongingId}")
     @PreAuthorize("hasRole('ADMIN','AGENT')")
     public ResponseEntity<ResBelonging> updateBelon(
             @PathVariable Long belongingId,
@@ -76,7 +76,7 @@ public class BelongingsController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/belonging-id/{id}")
+    @GetMapping("/user/belonging-id/{id}")
     public ResponseEntity<ResBelonging> getId(@PathVariable Long id) {
 
         ResBelonging reponse = this.belongingsService.getId(id);
@@ -84,7 +84,7 @@ public class BelongingsController {
         return ResponseEntity.ok(reponse);
     }
 
-    @GetMapping(path = "/agent/belongings/{type}")
+    @GetMapping(path = "/user/belongings/{type}")
     public List<ResBelonging> getBelongingByType(@PathVariable BelongingType type)
     {
         return this.belongingsService.getBelongingByType(type);

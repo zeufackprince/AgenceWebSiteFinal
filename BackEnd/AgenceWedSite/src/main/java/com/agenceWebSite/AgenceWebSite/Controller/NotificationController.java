@@ -1,5 +1,6 @@
 package com.agenceWebSite.AgenceWebSite.Controller;
 
+import com.agenceWebSite.AgenceWebSite.DTO.NotifRes;
 import com.agenceWebSite.AgenceWebSite.Models.Notification;
 import com.agenceWebSite.AgenceWebSite.Models.OurUsers;
 import com.agenceWebSite.AgenceWebSite.Models.Publication;
@@ -9,10 +10,12 @@ import com.agenceWebSite.AgenceWebSite.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -20,7 +23,7 @@ import java.util.Optional;
 /**
  * The type Notification controller.
  */
-@RestController // Assuming you're using Spring MVC
+@RestController 
 @RequestMapping("/api")
 public class NotificationController {
 
@@ -28,7 +31,7 @@ public class NotificationController {
     private NotificationRepository notificationRepository;
     
     @Autowired
-    private UserRepository userRepository; // Inject UserRepository for recipient lookup
+    private UserRepository userRepository; 
 
     @Autowired
     private PublicationRepository publicationRepository;
@@ -40,7 +43,7 @@ public class NotificationController {
      * @param securityContextHolder the security context persistence filter
      * @return the response entity
      */
-    @PostMapping("/agent/notifications/send-message")
+    @PostMapping("/user/notifications/send-message")
     public ResponseEntity<?> sendMessage(@RequestBody Notification request, @Autowired SecurityContextHolder securityContextHolder) {
 
         // Retrieve logged-in user using SecurityContextHolder
@@ -72,7 +75,7 @@ public class NotificationController {
             Notification notification = new Notification();
             notification.setSender(sender.get());
             notification.setMessage(message);
-            notification.setRecipients(Collections.singleton(recipientAgent));
+            notification.setRecipients(recipientAgent);
             notification.setPublication(publicationOptional.orElse(null)); // Set publication if found
             notificationRepository.save(notification);
 
@@ -82,10 +85,64 @@ public class NotificationController {
         }
     }
 
-    @GetMapping("/agent/notifications/getNotification")
-    public List<Notification> getNotifications()
+    //get all notification reserve to just the ADMIN
+    @GetMapping("/admin/notifications/getNotification")
+    @PreAuthorize("hasRole('ADMIN')")
+    public List<NotifRes> getAllNotifications()
     {
-        return this.notificationRepository.findAll();
+        List<Notification> savedList = this.notificationRepository.findAll();
+        List<NotifRes> response = new ArrayList<>();
+        NotifRes note = new NotifRes();
+        try {
+            for(Notification notif : savedList){
+                String recipient_mail = this.userRepository.findById(notif.getRecipients().getId()).get().getEmail();
+                note.setNotif_id(notif.getId());
+                note.setNot_message(notif.getMessage());
+                note.setPublication_name(notif.getPublication().getTitre());
+                note.setRecipient_email(recipient_mail);
+                note.setCreatedAt(notif.getCreatedAt());
+                note.setMessage("List of all Notifications");
+                note.setStatusCode(200);
+                response.add(note);
+            }
+            
+        } catch (Exception e) {
+            note.setMessage("Error fetching you Notifications" + e);
+            note.setStatusCode(500);
+            response.add(note);
+        }
+
+        return response;
+    }
+
+    //send notification to each different Agents
+    @GetMapping("/agent/notifications/get-by-recipientId/{recipient_id}")
+    @PreAuthorize("hasRole('AGENT')")
+    public List<NotifRes> sendNotifications(@PathVariable Long recipient_id){
+
+        List<NotifRes> response = new ArrayList<>();
+        NotifRes note = new NotifRes();
+        try {
+            List<Notification> savedList = this.notificationRepository.findNotificationByRecipientsId(recipient_id);
+
+            for(Notification notif: savedList){
+                
+                note.setNotif_id(notif.getId());
+                note.setNot_message(notif.getMessage());
+                note.setPublication_name(notif.getPublication().getTitre());
+                note.setCreatedAt(notif.getCreatedAt());
+                note.setMessage("This are all the message you have received");
+                note.setStatusCode(200);
+                response.add(note);
+            }   
+
+        } catch (Exception e) {
+            note.setMessage("Error fetching you Notifications" + e);
+            note.setStatusCode(500);
+            response.add(note);
+        }
+
+        return response;
     }
 
 

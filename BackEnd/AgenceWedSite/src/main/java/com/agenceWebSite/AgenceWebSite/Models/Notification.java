@@ -31,11 +31,15 @@ public class Notification {
     @JoinColumn(name = "sender_id")
     private OurUsers sender;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "notification_recipients",
-            joinColumns = @JoinColumn(name = "notification_id"),
-            inverseJoinColumns = @JoinColumn(name = "user_id"))
-    private Set<OurUsers> recipients;
+    // @ManyToMany(fetch = FetchType.LAZY)
+    // @JoinTable(name = "notification_recipients",
+    //         joinColumns = @JoinColumn(name = "notification_id"),
+    //         inverseJoinColumns = @JoinColumn(name = "user_id"))
+    // private Set<OurUsers> recipients;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @Column(name = "recipient_id")
+    private OurUsers recipients;
 
     @ManyToOne
     private Publication publication;

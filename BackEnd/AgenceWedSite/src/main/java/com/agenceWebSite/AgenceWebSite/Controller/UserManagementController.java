@@ -2,6 +2,7 @@ package com.agenceWebSite.AgenceWebSite.Controller;
 
 import com.agenceWebSite.AgenceWebSite.DTO.ReqRes;
 import com.agenceWebSite.AgenceWebSite.Models.Enums.Role;
+import com.agenceWebSite.AgenceWebSite.Repository.UserRepository;
 import com.agenceWebSite.AgenceWebSite.Service.UsersManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,6 +24,9 @@ import java.util.List;
 public class UserManagementController {
     @Autowired
     private UsersManagementService usersManagementService;
+
+    @Autowired 
+    private UserRepository userRepository;
 
 
     @PostMapping("/auth/register")
@@ -106,17 +110,28 @@ public class UserManagementController {
      */
     //modified for it to take the actual user
     @PutMapping("/api/user/update/{userId}")
-    public ResponseEntity<ReqRes> updateUser(@PathVariable Long userId,
+    public ResponseEntity<ReqRes> updateUser(
                                              @RequestParam(required = false) String name,
                                              @RequestParam(required = false) String email,
                                              @RequestParam(required = false) String password,
                                              @RequestParam(required = false) String telephone,
                                              @RequestParam(required = false)  Role role,
-                                             @RequestParam(required = false) MultipartFile file
+                                             @RequestParam(required = false) MultipartFile file,
+                                             @Autowired SecurityContextHolder securityContextHolder
     ) throws IOException {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null) {
+            
+            throw new RuntimeException("USER NOT AUTHENTICATED");
+        }
+
+        String userName  = authentication.getName();
+        Long userid = this.userRepository.findByEmail(userName).get().getId();
+
+
         ReqRes reqres = new ReqRes(name, email, telephone, password, role);
 
-        return ResponseEntity.ok(usersManagementService.updateUser(userId, reqres, file));
+        return ResponseEntity.ok(usersManagementService.updateUser(userid , reqres, file));
     }
 
     /**

@@ -36,7 +36,7 @@ public class ReqRes {
 
     private String name;
 
-    private Integer telephone;
+    private String telephone;
 
     private String images;
 
@@ -54,7 +54,7 @@ public class ReqRes {
 
     private List<OurUsers> ourUsersList;
 
-    public ReqRes(Long id, String name, String email, Integer telephone, Role role, byte[] photoBytes) {
+    public ReqRes(Long id, String name, String email, String telephone, Role role, byte[] photoBytes) {
         this.id = id;
         this.email = email;
         this.name = name;
@@ -62,7 +62,7 @@ public class ReqRes {
         this.role = role;
     }
 
-    public ReqRes(String name, String email, Integer telephone, String password, Role role) {
+    public ReqRes(String name, String email, String telephone, String password, Role role) {
         this.name = name;
         this.email = email;
         this.telephone =telephone;

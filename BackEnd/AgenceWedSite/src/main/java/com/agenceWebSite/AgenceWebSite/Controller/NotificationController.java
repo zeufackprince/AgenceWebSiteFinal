@@ -16,7 +16,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -115,7 +114,7 @@ public class NotificationController {
         return response;
     }
 
-    //send notification to each different Agents
+    //send notification to each different Agents modifier pour recuperer les info de la personne connecter 
     @GetMapping("/agent/notifications/get-by-recipientId/{recipient_id}")
     @PreAuthorize("hasRole('AGENT')")
     public List<NotifRes> sendNotifications(@PathVariable Long recipient_id){

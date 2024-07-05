@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
-import java.util.Set;
+
 
 /**
  * The type Notification.
@@ -38,7 +38,6 @@ public class Notification {
     // private Set<OurUsers> recipients;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "recipient_id")
     private OurUsers recipients;
 
     @ManyToOne

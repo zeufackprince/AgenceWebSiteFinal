@@ -29,7 +29,7 @@ public class UserManagementController {
     public ResponseEntity<ReqRes> regeister(@RequestParam(required = false) String name,
                                             @RequestParam(required = false) String email,
                                             @RequestParam(required = false) String password,
-                                            @RequestParam(required = false) Integer telephone,
+                                            @RequestParam(required = false) String telephone,
                                             @RequestParam(required = false) Role role,
                                             @RequestParam(required = false) MultipartFile file) throws IOException {
         // Check if the file is empty
@@ -78,7 +78,7 @@ public class UserManagementController {
      * @param userId the user id
      * @return the response entity
      */
-    @GetMapping("/api/admin/get-users/{userId}")
+    @GetMapping("/api/user/get-users/{userId}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ReqRes> getUSerByID(@PathVariable Long userId){
         return ResponseEntity.ok(usersManagementService.getUsersById(userId));
@@ -104,12 +104,13 @@ public class UserManagementController {
 //     * @param reqres the reqres
      * @return the response entity
      */
-    @PutMapping("/api/admin/update/{userId}")
+    //modified for it to take the actual user
+    @PutMapping("/api/user/update/{userId}")
     public ResponseEntity<ReqRes> updateUser(@PathVariable Long userId,
                                              @RequestParam(required = false) String name,
                                              @RequestParam(required = false) String email,
                                              @RequestParam(required = false) String password,
-                                             @RequestParam(required = false) Integer telephone,
+                                             @RequestParam(required = false) String telephone,
                                              @RequestParam(required = false)  Role role,
                                              @RequestParam(required = false) MultipartFile file
     ) throws IOException {

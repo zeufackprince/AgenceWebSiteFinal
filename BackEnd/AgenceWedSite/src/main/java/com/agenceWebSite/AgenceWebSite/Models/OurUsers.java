@@ -34,7 +34,7 @@ public class OurUsers implements UserDetails {
     private String email;
 
     @Column(name = "telephone_num")
-    private Integer telephone;
+    private String telephone;
 
     @Column(name = "password")
     private String password;
@@ -55,7 +55,7 @@ public class OurUsers implements UserDetails {
     public OurUsers(Long id,
                     String name,
                     String email,
-                    Integer telephone,
+                    String telephone,
                     String password, String images, Role role) {
 
         this.id = id;

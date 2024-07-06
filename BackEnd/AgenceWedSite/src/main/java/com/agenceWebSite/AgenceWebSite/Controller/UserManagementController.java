@@ -109,7 +109,7 @@ public class UserManagementController {
      * @return the response entity
      */
     //modified for it to take the actual user
-    @PutMapping("/api/user/update/{userId}")
+    @PutMapping("/api/user/update")
     public ResponseEntity<ReqRes> updateUser(
                                              @RequestParam(required = false) String name,
                                              @RequestParam(required = false) String email,

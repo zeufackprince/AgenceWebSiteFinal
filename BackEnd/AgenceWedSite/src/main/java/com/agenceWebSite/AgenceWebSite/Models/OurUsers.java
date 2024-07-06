@@ -3,6 +3,7 @@ package com.agenceWebSite.AgenceWebSite.Models;
 
 import com.agenceWebSite.AgenceWebSite.Models.Enums.Role;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -31,6 +32,7 @@ public class OurUsers implements UserDetails {
     private String name;
 
     @Column(name = "email")
+    @Email
     private String email;
 
     @Column(name = "telephone_num")

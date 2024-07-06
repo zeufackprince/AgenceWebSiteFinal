@@ -11,10 +11,12 @@ import com.agenceWebSite.AgenceWebSite.Repository.BelongingRepository;
 import com.agenceWebSite.AgenceWebSite.Repository.PublicationRepository;
 import com.agenceWebSite.AgenceWebSite.Repository.UserRepository;
 import lombok.AllArgsConstructor;
+
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -143,5 +145,36 @@ public class PublicationService {
     public void deletePub(Long id) {
 
         this.publicationRepository.deleteById(id);
+    }
+
+    public PubRes getPubById(Long pubid) {
+        
+        Publication publication = this.publicationRepository.findById(pubid).get();
+        PubRes response = new PubRes();
+        Belongings belongings = belongingRepository.findById(publication.getBienImmobilier().getId()).get();
+
+        List<String> posterUrl = new ArrayList<>();
+        List<String> poster = publication.getImages();
+
+        for (String image : poster){
+
+            String posterUrls = baseUrl + "/file/" + image;
+            posterUrl.add(posterUrls);
+        }
+
+        response.setId(publication.getId());
+        response.setTitre(publication.getTitre());
+        response.setDescription(publication.getDescription());
+        response.setPoster(publication.getImages());
+        response.setPosterUrl(posterUrl);
+        response.setDimension(belongings.getDimension());
+        response.setLocalisation(belongings.getLocalisation());
+        response.setNom(belongings.getNom());
+        response.setPrix(belongings.getPrix());
+        response.setType(belongings.getType());
+        response.setBelonging_id(belongings.getId());
+
+
+        return response;
     }
 }

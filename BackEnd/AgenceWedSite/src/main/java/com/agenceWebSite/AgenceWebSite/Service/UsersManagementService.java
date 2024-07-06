@@ -417,6 +417,7 @@ public class UsersManagementService {
                 resp.setEmail(saved.getEmail());
                 resp.setRole(saved.getRole());
                 resp.setPassword(saved.getPassword());
+                resp.setTelephone(saved.getTelephone());
                 resp.setPosterUrl(posterUrl);
                 resp.setPoster(saved.getImages());
                 resp.setMessage("User Updated Successfully");

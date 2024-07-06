@@ -31,6 +31,13 @@ public class PublicationController {
 
     }
 
+    @GetMapping("/user/get-pub-id/{pubid}")
+    public ResponseEntity<PubRes> getPublicationById(@PathVariable Long pubid){
+
+        PubRes res = this.publicationService.getPubById(pubid);
+        return ResponseEntity.ok(res);
+    }
+
     @DeleteMapping("/delete-pub")
     public void deletePublication(@PathVariable Long id){
         this.publicationService.deletePub(id);

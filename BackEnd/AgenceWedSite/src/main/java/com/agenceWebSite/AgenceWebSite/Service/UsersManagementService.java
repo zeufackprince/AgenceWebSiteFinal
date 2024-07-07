@@ -45,14 +45,14 @@ public class UsersManagementService {
     /**
      * Register req res.
      *
-     * @param registrationRequest the registration request
+     * @param reqres the registration request
      * @return the req res
      */
-    public ReqRes register(ReqRes registrationRequest, MultipartFile file) throws IOException {
+    public ReqRes register(ReqRes reqres, MultipartFile file) throws IOException {
         ReqRes resp = new ReqRes();
 
         //Verifier si un utilisateur avec l'email exist deja en BD
-        Optional<OurUsers> users = this.usersRepo.findByEmail(registrationRequest.getEmail());
+        Optional<OurUsers> users = this.usersRepo.findByEmail(reqres.getEmail());
 
         if (users.isPresent()){
             throw new RuntimeException("User  with Email :" + users.get().getEmail() + "Already exist !!");
@@ -61,8 +61,8 @@ public class UsersManagementService {
 
         //Verifie si le role est null ou pas
         //si elle est null on lui donne le role par defaut qui est USER
-        if (registrationRequest.getRole() == null){
-            registrationRequest.setRole(Role.USER);
+        if (reqres.getRole() == null){
+            reqres.setRole(Role.USER);
         }
 
         //on verifie si on n'a deja une photo ayant le meme nom en BD
@@ -71,16 +71,16 @@ public class UsersManagementService {
         }
         String uploadedFileName = fileService.uploadFileHandler(file);
 
-        registrationRequest.setPosterUrl(uploadedFileName);
+        reqres.setPosterUrl(uploadedFileName);
         try {
 
             OurUsers ourUser = new OurUsers();
-            ourUser.setEmail(registrationRequest.getEmail());
-            ourUser.setTelephone(registrationRequest.getTelephone());
-            ourUser.setRole(registrationRequest.getRole());
-            ourUser.setName(registrationRequest.getName());
-            ourUser.setPassword(passwordEncoder.encode(registrationRequest.getPassword()));
-            ourUser.setImages(registrationRequest.getPosterUrl());
+            ourUser.setEmail(reqres.getEmail());
+            ourUser.setTelephone(reqres.getTelephone());
+            ourUser.setRole(reqres.getRole());
+            ourUser.setName(reqres.getName());
+            ourUser.setPassword(passwordEncoder.encode(reqres.getPassword()));
+            ourUser.setImages(reqres.getPosterUrl());
 
             OurUsers ourUsersResult = usersRepo.save(ourUser);
 
@@ -95,7 +95,7 @@ public class UsersManagementService {
                 resp.setPassword(ourUsersResult.getPassword());
                 resp.setPosterUrl(posterUrl);
                 resp.setPoster(ourUsersResult.getImages());
-                resp.setMessage("User Saved Successfully");
+                resp.setMessage("User ourUsersResult Successfully");
                 resp.setStatusCode(200);
             }
 
@@ -351,36 +351,56 @@ public class UsersManagementService {
 
         try {
 
-            String fileName = users.getImages();
+            String fil = users.getImages();
 
             if (!file.isEmpty()){
-                Files.deleteIfExists(Paths.get(path + File.separator + fileName));
-                fileName = fileService.uploadFileHandler(file);
+                Files.deleteIfExists(Paths.get(path + File.separator + fil));
+                
             }
+
+            if (reqres.getRole() == null) {
+                
+                reqres.setRole(users.getRole());
+            }
+
+            String fileName = fileService.uploadFileHandler(file);
 
             reqres.setPoster(fileName);
 
-            OurUsers ourUsers = new OurUsers(
-                    users.getId(),
-                    reqres.getName(),
-                    reqres.getEmail(),
-                    reqres.getTelephone(),
-                    reqres.getPassword(),
-                    reqres.getImages(),
-                    reqres.getRole()
-            );
+            // OurUsers ourUsers = new OurUsers(
+            //         users.getId(),
+            //         reqres.getName(),
+            //         reqres.getEmail(),
+            //         reqres.getTelephone(),
+            //         reqres.getPassword(),
+            //         reqres.getImages(),
+            //         reqres.getRole()
+            // );
 
-            OurUsers saved = usersRepo.save(ourUsers);
+            OurUsers ourUser = new OurUsers();
+            ourUser.setId(users.getId());
+            ourUser.setEmail(reqres.getEmail());
+            ourUser.setTelephone(reqres.getTelephone());
+            ourUser.setRole(reqres.getRole());
+            ourUser.setName(reqres.getName());
+            ourUser.setPassword(passwordEncoder.encode(reqres.getPassword()));
+            ourUser.setImages(reqres.getPoster());
+
+            OurUsers ourUsersResult = usersRepo.save(ourUser);
+
+            // String posterUrl = baseUrl + "/file/" + uploadedFileName;
+
+            // OurUsers ourUsersResult = usersRepo.save(ourUsers);
 
             String posterUrl = baseUrl + "/file/" + fileName;
 
-            resp.setId(saved.getId());
-            resp.setName(saved.getName());
-            resp.setEmail(saved.getEmail());
-            resp.setRole(saved.getRole());
-            resp.setPassword(saved.getPassword());
+            resp.setId(ourUsersResult.getId());
+            resp.setName(ourUsersResult.getName());
+            resp.setEmail(ourUsersResult.getEmail());
+            resp.setRole(ourUsersResult.getRole());
+            resp.setPassword(ourUsersResult.getPassword());
             resp.setPosterUrl(posterUrl);
-            resp.setPoster(saved.getImages());
+            resp.setPoster(ourUsersResult.getImages());
             resp.setMessage("User Updated Successfully");
             resp.setStatusCode(200);
         }catch (Exception e){
@@ -406,20 +426,20 @@ public class UsersManagementService {
 
             if (userOptional.isPresent()) {
 
-                OurUsers saved = userOptional.get();
+                OurUsers ourUsersResult = userOptional.get();
 
-                String fileName = saved.getImages();
+                String fileName = ourUsersResult.getImages();
 
                 String posterUrl = baseUrl + "/file/" + fileName;
 
-                resp.setId(saved.getId());
-                resp.setName(saved.getName());
-                resp.setEmail(saved.getEmail());
-                resp.setRole(saved.getRole());
-                resp.setPassword(saved.getPassword());
-                resp.setTelephone(saved.getTelephone());
+                resp.setId(ourUsersResult.getId());
+                resp.setName(ourUsersResult.getName());
+                resp.setEmail(ourUsersResult.getEmail());
+                resp.setRole(ourUsersResult.getRole());
+                resp.setPassword(ourUsersResult.getPassword());
+                resp.setTelephone(ourUsersResult.getTelephone());
                 resp.setPosterUrl(posterUrl);
-                resp.setPoster(saved.getImages());
+                resp.setPoster(ourUsersResult.getImages());
                 resp.setMessage("User Updated Successfully");
                 resp.setStatusCode(200);
             } else {

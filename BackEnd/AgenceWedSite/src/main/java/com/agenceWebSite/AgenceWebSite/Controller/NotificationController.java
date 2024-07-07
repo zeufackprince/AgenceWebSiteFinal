@@ -53,7 +53,7 @@ public class NotificationController {
 
             Optional<OurUsers> sender = this.userRepository.findByEmail(userName);
 
-            String message = ("Je suis Mr/Mme/Mlle" + " " + sender.get().getName() + "Mon contact est :" + sender.get().getEmail() + " et " + sender.get().getTelephone() + request.getMessage());
+            String message = ("Je suis Mr/Mme/Mlle" + " " + sender.get().getName() + " " + "Mon contact est :" + sender.get().getEmail() + " et " + sender.get().getTelephone() + request.getMessage());
             Long publicationId = request.getPublication().getId(); // Assuming publication ID is provided
 
             Optional<Publication> publicationOptional = publicationRepository.findById(publicationId);
@@ -93,6 +93,10 @@ public class NotificationController {
         List<NotifRes> response = new ArrayList<>();
         NotifRes note = new NotifRes();
         try {
+
+            note.setMessage("List of all Notifications");
+            note.setStatusCode(200);
+
             for(Notification notif : savedList){
                 String recipient_mail = this.userRepository.findById(notif.getRecipients().getId()).get().getEmail();
                 note.setNotif_id(notif.getId());
@@ -100,8 +104,6 @@ public class NotificationController {
                 note.setPublication_name(notif.getPublication().getTitre());
                 note.setRecipient_email(recipient_mail);
                 note.setCreatedAt(notif.getCreatedAt());
-                note.setMessage("List of all Notifications");
-                note.setStatusCode(200);
                 response.add(note);
             }
             
@@ -115,14 +117,24 @@ public class NotificationController {
     }
 
     //send notification to each different Agents modifier pour recuperer les info de la personne connecter 
-    @GetMapping("/agent/notifications/get-by-recipientId/{recipient_id}")
-    @PreAuthorize("hasRole('AGENT')")
-    public List<NotifRes> sendNotifications(@PathVariable Long recipient_id){
+    @GetMapping("/agent/notifications/get-by-recipientId")
+    @PreAuthorize("hasRole('AGENT, ADMIN')")
+    public List<NotifRes> sendNotifications(@Autowired SecurityContextHolder securityContextHolder){
+
+        //verifies if the user is Authenticated and ritrieve it ID
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+       
+        String userName  = authentication.getName();
+
+        Long recipient_id = this.userRepository.findByEmail(userName).get().getId();
 
         List<NotifRes> response = new ArrayList<>();
         NotifRes note = new NotifRes();
         try {
             List<Notification> savedList = this.notificationRepository.findNotificationByRecipientsId(recipient_id);
+
+            note.setMessage("This are all the message you have received");
+            note.setStatusCode(200);
 
             for(Notification notif: savedList){
                 
@@ -130,8 +142,6 @@ public class NotificationController {
                 note.setNot_message(notif.getMessage());
                 note.setPublication_name(notif.getPublication().getTitre());
                 note.setCreatedAt(notif.getCreatedAt());
-                note.setMessage("This are all the message you have received");
-                note.setStatusCode(200);
                 response.add(note);
             }   
 

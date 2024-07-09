@@ -92,7 +92,7 @@ public class UsersManagementService {
                 resp.setName(ourUsersResult.getName());
                 resp.setEmail(ourUsersResult.getEmail());
                 resp.setRole(ourUsersResult.getRole());
-                resp.setPassword(ourUsersResult.getPassword());
+                resp.setTelephone(ourUsersResult.getTelephone());
                 resp.setPosterUrl(posterUrl);
                 resp.setPoster(ourUsersResult.getImages());
                 resp.setMessage("User ourUsersResult Successfully");
@@ -189,7 +189,7 @@ public class UsersManagementService {
                         resp.setName(users.getName());
                         resp.setEmail(users.getEmail());
                         resp.setRole(users.getRole());
-                        resp.setPassword(users.getPassword());
+                        resp.setTelephone(users.getTelephone());
                         resp.setPosterUrl(posterUrl);
                         resp.setPoster(users.getImages());
                         resp.setMessage("User List of users with role User Successfully");
@@ -206,7 +206,7 @@ public class UsersManagementService {
                         resp.setName(users.getName());
                         resp.setEmail(users.getEmail());
                         resp.setRole(users.getRole());
-                        resp.setPassword(users.getPassword());
+                        resp.setTelephone(users.getTelephone());
                         resp.setPosterUrl(posterUrl);
                         resp.setPoster(users.getImages());
                         resp.setMessage("User List of users with role AGent Successfully");
@@ -223,7 +223,7 @@ public class UsersManagementService {
                         resp.setName(users.getName());
                         resp.setEmail(users.getEmail());
                         resp.setRole(users.getRole());
-                        resp.setPassword(users.getPassword());
+                        resp.setTelephone(users.getTelephone());
                         resp.setPosterUrl(posterUrl);
                         resp.setPoster(users.getImages());
                         resp.setMessage("User List of users with role ADMIN Successfully");
@@ -264,7 +264,7 @@ public class UsersManagementService {
                     resp.setName(users.getName());
                     resp.setEmail(users.getEmail());
                     resp.setRole(users.getRole());
-                    resp.setPassword(users.getPassword());
+                    resp.setTelephone(users.getTelephone());
                     resp.setPosterUrl(posterUrl);
                     resp.setPoster(users.getImages());
                     resp.setMessage("User Listed Successfully");
@@ -304,7 +304,7 @@ public class UsersManagementService {
             resp.setName(users.getName());
             resp.setEmail(users.getEmail());
             resp.setRole(users.getRole());
-            resp.setPassword(users.getPassword());
+            resp.setTelephone(users.getTelephone());
             resp.setPosterUrl(posterUrl);
             resp.setPoster(users.getImages());
             resp.setMessage("User Listed Successfully");
@@ -398,7 +398,7 @@ public class UsersManagementService {
             resp.setName(ourUsersResult.getName());
             resp.setEmail(ourUsersResult.getEmail());
             resp.setRole(ourUsersResult.getRole());
-            resp.setPassword(ourUsersResult.getPassword());
+            resp.setTelephone(ourUsersResult.getTelephone());
             resp.setPosterUrl(posterUrl);
             resp.setPoster(ourUsersResult.getImages());
             resp.setMessage("User Updated Successfully");
@@ -436,7 +436,7 @@ public class UsersManagementService {
                 resp.setName(ourUsersResult.getName());
                 resp.setEmail(ourUsersResult.getEmail());
                 resp.setRole(ourUsersResult.getRole());
-                resp.setPassword(ourUsersResult.getPassword());
+                // resp.setPassword(ourUsersResult.getPassword());
                 resp.setTelephone(ourUsersResult.getTelephone());
                 resp.setPosterUrl(posterUrl);
                 resp.setPoster(ourUsersResult.getImages());

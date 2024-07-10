@@ -21,9 +21,11 @@ public class Publication {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
+    @Column(columnDefinition = "LONGTEXT")
     private String titre;
 
+    @Column(columnDefinition = "LONGTEXT")
     private String description;
 
     @Enumerated(value = EnumType.STRING)

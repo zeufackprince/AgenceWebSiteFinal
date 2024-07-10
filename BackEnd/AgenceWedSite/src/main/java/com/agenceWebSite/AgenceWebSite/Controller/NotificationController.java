@@ -43,7 +43,7 @@ public class NotificationController {
      * @return the response entity
      */
     @PostMapping("/user/notifications/send-message")
-    public ResponseEntity<?> sendMessage(@RequestBody Notification request, @Autowired SecurityContextHolder securityContextHolder) {
+    public ResponseEntity<?> sendMessage(@RequestParam String message, @RequestParam Long publicationId, @Autowired SecurityContextHolder securityContextHolder) {
 
         // Retrieve logged-in user using SecurityContextHolder
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -53,8 +53,8 @@ public class NotificationController {
 
             Optional<OurUsers> sender = this.userRepository.findByEmail(userName);
 
-            String message = ("Je suis Mr/Mme/Mlle" + " " + sender.get().getName() + " " + "Mon contact est :" + sender.get().getEmail() + " et " + sender.get().getTelephone() + request.getMessage());
-            Long publicationId = request.getPublication().getId(); // Assuming publication ID is provided
+            String messageToSend = ("Je suis Mr/Mme/Mlle" + " " + sender.get().getName() + " " + "Mon contact est :" + sender.get().getEmail() + " et " + sender.get().getTelephone() + message);
+            // Long publicationId = request.getPublication().getId(); // Assuming publication ID is provided
 
             Optional<Publication> publicationOptional = publicationRepository.findById(publicationId);
 
@@ -63,7 +63,7 @@ public class NotificationController {
             if (publicationOptional.isPresent()) {
                 recipientAgent = publicationOptional.get().getBienImmobilier().getUser(); // Adjust based on your relationships
             } else {
-                // Logic to find recipient agent based on selection (optional)
+                throw new IllegalStateException("no pulication avialable" + publicationId);
             }
 
             if (recipientAgent == null) {
@@ -73,7 +73,7 @@ public class NotificationController {
             // Create and save notification
             Notification notification = new Notification();
             notification.setSender(sender.get());
-            notification.setMessage(message);
+            notification.setMessage(messageToSend);
             notification.setRecipients(recipientAgent);
             notification.setPublication(publicationOptional.orElse(null)); // Set publication if found
             notificationRepository.save(notification);

@@ -1,10 +1,12 @@
 package com.agenceWebSite.AgenceWebSite.Service;
 
 import com.agenceWebSite.AgenceWebSite.DTO.PubRes;
+import com.agenceWebSite.AgenceWebSite.DTO.ResBelonging;
 import com.agenceWebSite.AgenceWebSite.Exceptions.BelongingExistException;
 import com.agenceWebSite.AgenceWebSite.Exceptions.RoleNotFoundException;
 import com.agenceWebSite.AgenceWebSite.Models.Belongings;
 import com.agenceWebSite.AgenceWebSite.Models.Enums.Role;
+import com.agenceWebSite.AgenceWebSite.Models.Enums.Status;
 import com.agenceWebSite.AgenceWebSite.Models.OurUsers;
 import com.agenceWebSite.AgenceWebSite.Models.Publication;
 import com.agenceWebSite.AgenceWebSite.Repository.BelongingRepository;
@@ -51,6 +53,7 @@ public class PublicationService {
 
                 publication.setTitre(request.getTitre());
                 publication.setDescription(request.getDescription());
+                publication.setStatus(request.getStatus());
                 publication.setImages(belongings.getImages());
                 publication.setBienImmobilier(belongings);
             }
@@ -78,6 +81,7 @@ public class PublicationService {
             response.setLocalisation(belongings.getLocalisation());
             response.setNom(belongings.getNom());
             response.setPrix(belongings.getPrix());
+            response.setStatus(savePub.getStatus());
             response.setType(belongings.getType());
             response.setBelonging_id(belongings.getId());
             response.setStatusCode(200);
@@ -127,6 +131,7 @@ public class PublicationService {
                 response.setDimension(belongings.getDimension());
                 response.setLocalisation(belongings.getLocalisation());
                 response.setNom(belongings.getNom());
+                response.setStatus(publication.getStatus());
                 response.setPrix(belongings.getPrix());
                 response.setType(belongings.getType());
                 response.setBelonging_id(belongings.getId());
@@ -170,10 +175,92 @@ public class PublicationService {
         response.setLocalisation(belongings.getLocalisation());
         response.setNom(belongings.getNom());
         response.setPrix(belongings.getPrix());
+        response.setStatus(publication.getStatus());
         response.setType(belongings.getType());
         response.setBelonging_id(belongings.getId());
 
 
         return response;
     }
+
+    public List<PubRes> getPublicationByStatus(Status status){
+
+        List<Publication> pubList = this.publicationRepository.findAll();
+        List<PubRes> res = new ArrayList<>();
+
+        try {
+            for(Publication publication : pubList){
+
+                if (publication.getStatus() == status.LOUER) {
+
+                    Belongings belongings = belongingRepository.findById(publication.getBienImmobilier().getId()).get();
+
+                    List<String> posterUrl = new ArrayList<>();
+                    List<String> poster = publication.getImages();
+
+                    for (String image : poster){
+
+                        String posterUrls = baseUrl + "/file/" + image;
+                        posterUrl.add(posterUrls);
+                    }
+
+                    PubRes pub = new PubRes();
+                    pub.setId(publication.getId());
+                    pub.setTitre(publication.getTitre());
+                    pub.setDescription(publication.getDescription());
+                    pub.setPoster(publication.getImages());
+                    pub.setPosterUrl(posterUrl);
+                    pub.setDimension(belongings.getDimension());
+                    pub.setLocalisation(belongings.getLocalisation());
+                    pub.setNom(belongings.getNom());
+                    pub.setPrix(belongings.getPrix());
+                    pub.setStatus(publication.getStatus());
+                    pub.setType(belongings.getType());
+                    pub.setBelonging_id(belongings.getId());
+
+                    res.add(pub);
+                    
+                }else if(publication.getStatus() == status.ACHETER ){
+
+                    Belongings belongings = belongingRepository.findById(publication.getBienImmobilier().getId()).get();
+
+                    List<String> posterUrl = new ArrayList<>();
+                    List<String> poster = publication.getImages();
+
+                    for (String image : poster){
+
+                        String posterUrls = baseUrl + "/file/" + image;
+                        posterUrl.add(posterUrls);
+                    }
+
+                    PubRes pub = new PubRes();
+                    pub.setId(publication.getId());
+                    pub.setTitre(publication.getTitre());
+                    pub.setDescription(publication.getDescription());
+                    pub.setPoster(publication.getImages());
+                    pub.setPosterUrl(posterUrl);
+                    pub.setDimension(belongings.getDimension());
+                    pub.setLocalisation(belongings.getLocalisation());
+                    pub.setNom(belongings.getNom());
+                    pub.setPrix(belongings.getPrix());
+                    pub.setStatus(publication.getStatus());
+                    pub.setType(belongings.getType());
+                    pub.setBelonging_id(belongings.getId());
+
+                    res.add(pub);
+                }
+
+            }
+        } catch (Exception e) {
+            PubRes pub = new PubRes();
+            pub.setMessage("Error fetching Publications of State " + status + e);
+            res.add(pub);
+            
+        }
+
+        return res;
+
+    }
+
+   
 }

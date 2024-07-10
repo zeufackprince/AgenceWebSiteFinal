@@ -2,6 +2,7 @@ package com.agenceWebSite.AgenceWebSite.DTO;
 
 import com.agenceWebSite.AgenceWebSite.Models.Enums.BelongingType;
 import com.agenceWebSite.AgenceWebSite.Models.Enums.Cities;
+import com.agenceWebSite.AgenceWebSite.Models.Enums.Status;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
@@ -38,6 +39,8 @@ public class PubRes {
     private Cities localisation;
 
     private double prix;
+
+    private Status status;
 
     List<String> images;
 

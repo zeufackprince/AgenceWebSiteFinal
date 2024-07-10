@@ -9,6 +9,8 @@ import lombok.Setter;
 import java.util.Date;
 import java.util.List;
 
+import com.agenceWebSite.AgenceWebSite.Models.Enums.Status;
+
 @Entity
 @Table
 @AllArgsConstructor
@@ -23,6 +25,9 @@ public class Publication {
     private String titre;
 
     private String description;
+
+    @Enumerated(value = EnumType.STRING)
+    private Status status;
 
     List<String> images;
 

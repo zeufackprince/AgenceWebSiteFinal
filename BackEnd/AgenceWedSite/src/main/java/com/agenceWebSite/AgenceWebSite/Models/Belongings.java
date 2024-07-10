@@ -42,6 +42,10 @@ public class Belongings {
     @Column(name = "images")
     private List<String> images;
 
+    // @Column(name = "status")
+    // @Enumerated(value = EnumType.STRING)
+    // private Status status;
+
     @OneToOne(mappedBy = "bienImmobilier")
     private Publication publication;
 

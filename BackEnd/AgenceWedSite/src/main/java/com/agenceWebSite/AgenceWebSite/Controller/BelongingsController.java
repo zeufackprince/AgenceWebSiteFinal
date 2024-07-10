@@ -3,6 +3,7 @@ package com.agenceWebSite.AgenceWebSite.Controller;
 import com.agenceWebSite.AgenceWebSite.DTO.ResBelonging;
 import com.agenceWebSite.AgenceWebSite.Models.Enums.BelongingType;
 import com.agenceWebSite.AgenceWebSite.Models.Enums.Cities;
+import com.agenceWebSite.AgenceWebSite.Models.Enums.Status;
 import com.agenceWebSite.AgenceWebSite.Repository.UserRepository;
 import com.agenceWebSite.AgenceWebSite.Service.BelongingsService;
 import lombok.AllArgsConstructor;
@@ -37,6 +38,7 @@ public class BelongingsController {
             @RequestParam("dimension") String dimension,
             @RequestParam("localisation")Cities localisation,
             @RequestParam("prix") Double prix
+            // @RequestParam("status") Status status
     ) throws IOException {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -69,6 +71,7 @@ public class BelongingsController {
             @RequestParam(required = false ) String dimension,
             @RequestParam(required = false )Cities localisation,
             @RequestParam(required = false ) Double prix
+            // @RequestParam("status") Status status
     ) throws IOException, SQLException {
 
         ResBelonging response = this.belongingsService.updateBelon(belongingId, images, name, type, dimension, localisation, prix);
@@ -89,5 +92,10 @@ public class BelongingsController {
     {
         return this.belongingsService.getBelongingByType(type);
     }
+
+    // @GetMapping(path = "/user/belonging/{status}")
+    // public List<ResBelonging> getBelongingByStatus(@PathVariable Status status){
+    //     return this.belongingsService.getBelongingByStatus(status);
+    // }
 
 }

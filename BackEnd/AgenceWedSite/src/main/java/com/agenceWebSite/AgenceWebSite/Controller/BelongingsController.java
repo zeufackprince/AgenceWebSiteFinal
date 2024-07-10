@@ -3,7 +3,6 @@ package com.agenceWebSite.AgenceWebSite.Controller;
 import com.agenceWebSite.AgenceWebSite.DTO.ResBelonging;
 import com.agenceWebSite.AgenceWebSite.Models.Enums.BelongingType;
 import com.agenceWebSite.AgenceWebSite.Models.Enums.Cities;
-import com.agenceWebSite.AgenceWebSite.Models.Enums.Status;
 import com.agenceWebSite.AgenceWebSite.Repository.UserRepository;
 import com.agenceWebSite.AgenceWebSite.Service.BelongingsService;
 import lombok.AllArgsConstructor;

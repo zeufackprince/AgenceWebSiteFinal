@@ -1,7 +1,6 @@
 package com.agenceWebSite.AgenceWebSite.Service;
 
 import com.agenceWebSite.AgenceWebSite.DTO.PubRes;
-import com.agenceWebSite.AgenceWebSite.DTO.ResBelonging;
 import com.agenceWebSite.AgenceWebSite.Exceptions.BelongingExistException;
 import com.agenceWebSite.AgenceWebSite.Exceptions.RoleNotFoundException;
 import com.agenceWebSite.AgenceWebSite.Models.Belongings;

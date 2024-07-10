@@ -22,9 +22,11 @@ public class Publication {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    @Lob
     @Column(columnDefinition = "LONGTEXT")
     private String titre;
 
+    @Lob
     @Column(columnDefinition = "LONGTEXT")
     private String description;
 

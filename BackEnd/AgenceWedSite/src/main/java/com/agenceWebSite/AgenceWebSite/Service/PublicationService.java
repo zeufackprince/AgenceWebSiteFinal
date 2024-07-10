@@ -88,9 +88,9 @@ public class PublicationService {
 
         }catch (Exception e){
 
-            response.setMessage("Error creating Publication");
+            response.setMessage("Error creating Publication" + e);
             response.setStatusCode(500);
-            throw new BelongingExistException("Belonging not Found" + e);
+            
 
         }
 

@@ -20,6 +20,10 @@ public class PublicationController {
     @PostMapping("/agent/new-publication")
     public ResponseEntity<PubRes> createPublication(@RequestBody PubRes request) {
 
+        if (request.getBelonging_id() == null){
+            throw new IllegalStateException("belonging id is :" + request.getBelonging_id());
+        }
+
         PubRes response = this.publicationService.createPublication(request);
         return ResponseEntity.ok(response);
 

@@ -2,6 +2,7 @@ package com.agenceWebSite.AgenceWebSite.Controller;
 
 import com.agenceWebSite.AgenceWebSite.DTO.ReqRes;
 import com.agenceWebSite.AgenceWebSite.Models.Enums.Role;
+import com.agenceWebSite.AgenceWebSite.Repository.UserRepository;
 import com.agenceWebSite.AgenceWebSite.Service.UsersManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,6 +12,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+// import org.springframework.mock.web.MockMultipartFile;
 
 import java.io.IOException;
 import java.util.List;
@@ -23,24 +25,19 @@ public class UserManagementController {
     @Autowired
     private UsersManagementService usersManagementService;
 
-    /**
-     * Regeister response entity.
-     *
-//     * @param reg the reg
-     * @return the response entity
-     */
-//    @PostMapping("/auth/register")
-//    public ResponseEntity<ReqRes> regeister(@RequestBody ReqRes reg){
-//        return ResponseEntity.ok(usersManagementService.register(reg));
-//    }
+    @Autowired 
+    private UserRepository userRepository;
+
 
     @PostMapping("/auth/register")
     public ResponseEntity<ReqRes> regeister(@RequestParam(required = false) String name,
                                             @RequestParam(required = false) String email,
                                             @RequestParam(required = false) String password,
-                                            @RequestParam(required = false) Integer telephone,
-                                            @RequestParam(required = false)  Role role,
+                                            @RequestParam(required = false) String telephone,
+                                            @RequestParam(required = false) Role role,
                                             @RequestParam(required = false) MultipartFile file) throws IOException {
+        // Check if the file is empty
+        
         ReqRes reg = new ReqRes(name, email, telephone, password, role);
         return new ResponseEntity<>(usersManagementService.register(reg, file), HttpStatus.CREATED);
 
@@ -85,7 +82,7 @@ public class UserManagementController {
      * @param userId the user id
      * @return the response entity
      */
-    @GetMapping("/api/admin/get-users/{userId}")
+    @GetMapping("/api/user/get-users/{userId}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ReqRes> getUSerByID(@PathVariable Long userId){
         return ResponseEntity.ok(usersManagementService.getUsersById(userId));
@@ -111,18 +108,30 @@ public class UserManagementController {
 //     * @param reqres the reqres
      * @return the response entity
      */
-    @PutMapping("/api/admin/update/{userId}")
-    public ResponseEntity<ReqRes> updateUser(@PathVariable Long userId,
+    //modified for it to take the actual user
+    @PutMapping("/api/user/update")
+    public ResponseEntity<ReqRes> updateUser(
                                              @RequestParam(required = false) String name,
                                              @RequestParam(required = false) String email,
                                              @RequestParam(required = false) String password,
-                                             @RequestParam(required = false) Integer telephone,
+                                             @RequestParam(required = false) String telephone,
                                              @RequestParam(required = false)  Role role,
-                                             @RequestParam(required = false) MultipartFile file
+                                             @RequestParam(required = false) MultipartFile file,
+                                             @Autowired SecurityContextHolder securityContextHolder
     ) throws IOException {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null) {
+            
+            throw new RuntimeException("USER NOT AUTHENTICATED");
+        }
+
+        String userName  = authentication.getName();
+        Long userid = this.userRepository.findByEmail(userName).get().getId();
+
+
         ReqRes reqres = new ReqRes(name, email, telephone, password, role);
 
-        return ResponseEntity.ok(usersManagementService.updateUser(userId, reqres, file));
+        return ResponseEntity.ok(usersManagementService.updateUser(userid , reqres, file));
     }
 
     /**

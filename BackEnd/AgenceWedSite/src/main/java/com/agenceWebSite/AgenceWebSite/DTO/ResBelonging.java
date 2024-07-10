@@ -2,6 +2,8 @@ package com.agenceWebSite.AgenceWebSite.DTO;
 
 import com.agenceWebSite.AgenceWebSite.Models.Enums.BelongingType;
 import com.agenceWebSite.AgenceWebSite.Models.Enums.Cities;
+import com.agenceWebSite.AgenceWebSite.Models.Enums.Status;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -31,6 +33,10 @@ public class ResBelonging {
 
     private List<String> poster;
 
+    private String message;
+
+    private Status status;
+
     private Long userId;
 
     public ResBelonging(Long id,
@@ -39,7 +45,8 @@ public class ResBelonging {
                         String dimension,
                         Cities localisation,
                         double prix,
-                        Long user) {
+                        Long user,
+                        Status status) {
         this.id = id;
         this.nom = nom;
         this.type = type;

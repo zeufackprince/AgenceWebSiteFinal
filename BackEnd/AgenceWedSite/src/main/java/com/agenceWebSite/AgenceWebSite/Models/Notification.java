@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
-import java.util.Set;
+
 
 /**
  * The type Notification.
@@ -31,11 +31,14 @@ public class Notification {
     @JoinColumn(name = "sender_id")
     private OurUsers sender;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "notification_recipients",
-            joinColumns = @JoinColumn(name = "notification_id"),
-            inverseJoinColumns = @JoinColumn(name = "user_id"))
-    private Set<OurUsers> recipients;
+    // @ManyToMany(fetch = FetchType.LAZY)
+    // @JoinTable(name = "notification_recipients",
+    //         joinColumns = @JoinColumn(name = "notification_id"),
+    //         inverseJoinColumns = @JoinColumn(name = "user_id"))
+    // private Set<OurUsers> recipients;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private OurUsers recipients;
 
     @ManyToOne
     private Publication publication;

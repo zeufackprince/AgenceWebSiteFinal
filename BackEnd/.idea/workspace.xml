@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41c5498e-1bf9-4ff5-9efe-f1e9b58ad80c" name="Changes" comment="code updated with a more relaible file management and DTO for a better understanding and appropriate way of writing code" />
+    <list default="true" id="41c5498e-1bf9-4ff5-9efe-f1e9b58ad80c" name="Changes" comment="code updated with a more relaible file management and DTO for a better understanding and appropriate way of writing code">
+      <change beforePath="$PROJECT_DIR$/../Search/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Search/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Search/src/main/java/Search/Search/Controller/RechC.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Search/src/main/java/Search/Search/Controller/RechC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Search/src/main/java/Search/Search/Entity/RechE.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Search/src/main/java/Search/Search/Entity/RechE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Search/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Search/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,18 +45,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Prince",
-    "last_opened_file_path": "C:/Users/Prince Levis/Desktop/Project/Project/PROJECT/BackEnd/AgenceWedSite/src/main/java/com/agenceWebSite/AgenceWebSite/Service",
-    "settings.editor.selected.configurable": "http.proxy"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Prince&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Prince Levis/Desktop/Project/Project/PROJECT/BackEnd&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;http.proxy&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Prince Levis\Desktop\Project\Project\PROJECT\BackEnd\AgenceWedSite\src\main\java\com\agenceWebSite\AgenceWebSite\Service" />
@@ -101,7 +106,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719920259107</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="code updated with a more relaible file management and DTO for a better understanding and appropriate way of writing code">
+      <option name="closed" value="true" />
+      <created>1719920696523</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1719920696523</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

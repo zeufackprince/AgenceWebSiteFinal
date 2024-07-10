@@ -38,14 +38,23 @@ public class BelongingsService {
 
     private final String baseUrl = "http://localhost:1010";
 
-    public ResBelonging createBelon(List<MultipartFile> images, String name, BelongingType type, String dimension, Cities localisation, Double prix, Long user) throws IOException {
+    public ResBelonging createBelon(List<MultipartFile> images, 
+                                    String name, 
+                                    BelongingType type, 
+                                    String dimension, 
+                                    Cities localisation, 
+                                    Double prix,
+                                    // Status status, 
+                                    Long user
+        ) throws IOException {
 
         Belongings belongings = new Belongings();
-        belongings.setNom(name);
-        belongings.setType(type);
-        belongings.setDimension(dimension);
-        belongings.setLocalisation(localisation);
-        belongings.setPrix(prix);
+                    belongings.setNom(name);
+                    belongings.setType(type);
+                    belongings.setDimension(dimension);
+                    belongings.setLocalisation(localisation);
+                    belongings.setPrix(prix);
+                    // belongings.setStatus(status);
 
 
         Optional<OurUsers> users = this.userRepository.findById(user);
@@ -87,6 +96,7 @@ public class BelongingsService {
         reponse.setDimension(belongingsdb.getDimension());
         reponse.setLocalisation(belongingsdb.getLocalisation());
         reponse.setPrix(belongingsdb.getPrix());
+        // reponse.setStatus(belongingsdb.getStatus());
         reponse.setPoster(poster);
         reponse.setPosterUrl(posterUrl);
         reponse.setUserId(belongingsdb.getUser().getId());
@@ -115,6 +125,7 @@ public class BelongingsService {
             reponse.setDimension(belongingsdb.getDimension());
             reponse.setLocalisation(belongingsdb.getLocalisation());
             reponse.setPrix(belongingsdb.getPrix());
+            // reponse.setStatus(belongingsdb.getStatus());
             reponse.setPoster(belongingsdb.getImages());
             reponse.setPosterUrl(posterUrl);
             reponse.setUserId(belongingsdb.getUser().getId());
@@ -129,7 +140,15 @@ public class BelongingsService {
         }
     }
 
-    public ResBelonging updateBelon(Long belongingId, List<MultipartFile> images, String name, BelongingType type, String dimension, Cities localisation, Double prix) throws IOException, SQLException {
+    public ResBelonging updateBelon(Long belongingId, 
+                                    List<MultipartFile> images, 
+                                    String name, 
+                                    BelongingType type, 
+                                    String dimension, 
+                                    Cities localisation, 
+                                    Double prix 
+                                    // Status status
+        ) throws IOException, SQLException {
 
         Optional<Belongings> belongingsdb = this.belongingRepository.findById(belongingId);
         List<String> poster = new ArrayList<>();
@@ -143,9 +162,9 @@ public class BelongingsService {
             }
 
             for (MultipartFile file : images) {
-                if (Files.exists(Paths.get(path + File.separator + file.getOriginalFilename()))) {
-                    throw new FileExistsException("File already exists! Please enter another file name!");
-                }
+                // if (Files.exists(Paths.get(path + File.separator + file.getOriginalFilename()))) {
+                //     throw new FileExistsException("File already exists! Please enter another file name!");
+                // }
                 String uploadedFileName = fileController.uploadFileHandler(file);
                 poster.add(uploadedFileName);
                 String posterUrls = baseUrl + "/file/" + uploadedFileName;
@@ -161,6 +180,7 @@ public class BelongingsService {
             belongingsdb.get().setLocalisation(localisation);
             belongingsdb.get().setPrix(prix);
             belongingsdb.get().setImages(poster);
+            // belongingsdb.get().setStatus(status);
         }else {
             throw new RuntimeException("No such belonging with the id provided");
         }
@@ -173,6 +193,7 @@ public class BelongingsService {
         reponse.setDimension(belongings.getDimension());
         reponse.setLocalisation(belongings.getLocalisation());
         reponse.setPrix(belongings.getPrix());
+        // reponse.setStatus(belongings.getStatus());
         reponse.setPoster(belongings.getImages());
         reponse.setPosterUrl(posterUrl);
         reponse.setUserId(belongings.getUser().getId());
@@ -196,9 +217,8 @@ public class BelongingsService {
         reponse.setDimension(belongings.getDimension());
         reponse.setLocalisation(belongings.getLocalisation());
         reponse.setPrix(belongings.getPrix());
+        // reponse.setStatus(belongings.getStatus());
         reponse.setPoster(belongings.getImages());
-
-
 
         for (String image : posterUrl){
 
@@ -226,90 +246,160 @@ public class BelongingsService {
     }
 
     public List<ResBelonging> getBelongingByType(BelongingType type) {
-
         List<Belongings> belongings = this.belongingRepository.findAll();
         List<ResBelonging> responsed = new ArrayList<>();
-
-
-        switch (type){
-
-            case ROOM -> {
+    
+        List<String> posterUrl = new ArrayList<>();
+        ResBelonging response = new ResBelonging();
+        try {
+            if (type == BelongingType.ROOM) {
                 for (Belongings belongingsdb : belongings) {
-                    List<String> posterUrl = new ArrayList<>();
-                    ResBelonging reponse = new ResBelonging();
+                    
                     if (belongingsdb.getType() == BelongingType.ROOM) {
                         List<String> img = belongingsdb.getImages();
                         for (String image : img) {
                             String posterUrls = baseUrl + "/file/" + image;
                             posterUrl.add(posterUrls);
                         }
-                        reponse.setId(belongingsdb.getId());
-                        reponse.setNom(belongingsdb.getNom());
-                        reponse.setType(belongingsdb.getType());
-                        reponse.setDimension(belongingsdb.getDimension());
-                        reponse.setLocalisation(belongingsdb.getLocalisation());
-                        reponse.setPrix(belongingsdb.getPrix());
-                        reponse.setPoster(belongingsdb.getImages());
-                        reponse.setPosterUrl(posterUrl);
-                        reponse.setUserId(belongingsdb.getUser().getId());
-
-                        responsed.add(reponse);
+                        response.setId(belongingsdb.getId());
+                        response.setNom(belongingsdb.getNom());
+                        response.setType(belongingsdb.getType());
+                        response.setDimension(belongingsdb.getDimension());
+                        response.setLocalisation(belongingsdb.getLocalisation());
+                        response.setPrix(belongingsdb.getPrix());
+                        // response.setStatus(belongingsdb.getStatus());
+                        response.setPoster(belongingsdb.getImages());
+                        response.setPosterUrl(posterUrl);
+                        response.setUserId(belongingsdb.getUser().getId());
+    
+                        responsed.add(response);
                     }
                 }
-                return responsed;
-            }
-            case STUDIOS -> {
+            } else if (type == BelongingType.STUDIOS) {
                 for (Belongings belongingsdb : belongings) {
-                    List<String> posterUrl = new ArrayList<>();
-                    ResBelonging reponse = new ResBelonging();
+                    
                     if (belongingsdb.getType() == BelongingType.STUDIOS) {
                         List<String> img = belongingsdb.getImages();
                         for (String image : img) {
                             String posterUrls = baseUrl + "/file/" + image;
                             posterUrl.add(posterUrls);
                         }
-                        reponse.setId(belongingsdb.getId());
-                        reponse.setNom(belongingsdb.getNom());
-                        reponse.setType(belongingsdb.getType());
-                        reponse.setDimension(belongingsdb.getDimension());
-                        reponse.setLocalisation(belongingsdb.getLocalisation());
-                        reponse.setPrix(belongingsdb.getPrix());
-                        reponse.setPoster(belongingsdb.getImages());
-                        reponse.setPosterUrl(posterUrl);
-                        reponse.setUserId(belongingsdb.getUser().getId());
-
-                        responsed.add(reponse);
+                        response.setId(belongingsdb.getId());
+                        response.setNom(belongingsdb.getNom());
+                        response.setType(belongingsdb.getType());
+                        response.setDimension(belongingsdb.getDimension());
+                        response.setLocalisation(belongingsdb.getLocalisation());
+                        response.setPrix(belongingsdb.getPrix());
+                        // response.setStatus(belongingsdb.getStatus());
+                        response.setPoster(belongingsdb.getImages());
+                        response.setPosterUrl(posterUrl);
+                        response.setUserId(belongingsdb.getUser().getId());
+    
+                        responsed.add(response);
                     }
                 }
-
-                return responsed;
-            }
-            case APPARTMENT -> {
+            } else if (type == BelongingType.APPARTMENT) {
                 for (Belongings belongingsdb : belongings) {
-                    List<String> posterUrl = new ArrayList<>();
-                    ResBelonging reponse = new ResBelonging();
+                    
                     if (belongingsdb.getType() == BelongingType.APPARTMENT) {
                         List<String> img = belongingsdb.getImages();
                         for (String image : img) {
                             String posterUrls = baseUrl + "/file/" + image;
                             posterUrl.add(posterUrls);
                         }
-                        reponse.setId(belongingsdb.getId());
-                        reponse.setNom(belongingsdb.getNom());
-                        reponse.setType(belongingsdb.getType());
-                        reponse.setDimension(belongingsdb.getDimension());
-                        reponse.setLocalisation(belongingsdb.getLocalisation());
-                        reponse.setPrix(belongingsdb.getPrix());
-                        reponse.setPoster(belongingsdb.getImages());
-                        reponse.setPosterUrl(posterUrl);
-                        reponse.setUserId(belongingsdb.getUser().getId());
-
-                        responsed.add(reponse);
+                        response.setId(belongingsdb.getId());
+                        response.setNom(belongingsdb.getNom());
+                        response.setType(belongingsdb.getType());
+                        response.setDimension(belongingsdb.getDimension());
+                        response.setLocalisation(belongingsdb.getLocalisation());
+                        // response.setStatus(belongingsdb.getStatus());
+                        response.setPrix(belongingsdb.getPrix());
+                        response.setPoster(belongingsdb.getImages());
+                        response.setPosterUrl(posterUrl);
+                        response.setUserId(belongingsdb.getUser().getId());
+    
+                        responsed.add(response);
                     }
                 }
-                return responsed;
+            } else {
+                response.setMessage("Error while fetching Belonging by Type");
+                responsed.add(response);
+                // throw new RuntimeException("Incorrect type");
             }
-            default -> throw new RuntimeException("Incoorect type");
+        } catch (Exception e) {
+            response.setMessage("Error while fetching Belonging by Type");
+            responsed.add(response);
         }
+    
+        return responsed;
     }
+
+    // public List<ResBelonging> getBelongingByStatus(Status status) {
+    //     List<Belongings> belongings = this.belongingRepository.findAll();
+    //     List<ResBelonging> responsed = new ArrayList<>();
+    
+    //     try {
+    //         if (status == Status.ACHETER) {
+    //             for (Belongings belongingsdb : belongings) {
+    //                 if (belongingsdb.getStatus() == Status.ACHETER) {
+    //                     ResBelonging response = new ResBelonging();
+    //                     List<String> posterUrl = new ArrayList<>();
+    //                     List<String> img = belongingsdb.getImages();
+    //                     for (String image : img) {
+    //                         String posterUrls = baseUrl + "/file/" + image;
+    //                         posterUrl.add(posterUrls);
+    //                     }
+    //                     response.setId(belongingsdb.getId());
+    //                     response.setNom(belongingsdb.getNom());
+    //                     response.setType(belongingsdb.getType());
+    //                     response.setDimension(belongingsdb.getDimension());
+    //                     response.setLocalisation(belongingsdb.getLocalisation());
+    //                     response.setPrix(belongingsdb.getPrix());
+    //                     response.setStatus(belongingsdb.getStatus());
+    //                     response.setPoster(belongingsdb.getImages());
+    //                     response.setPosterUrl(posterUrl);
+    //                     response.setUserId(belongingsdb.getUser().getId());
+    
+    //                     responsed.add(response);
+    //                 }
+    //             }
+    //         } else if (status == Status.LOUER) {
+    //             for (Belongings belongingsdb : belongings) {
+    //                 if (belongingsdb.getStatus() == Status.LOUER) {
+    //                     ResBelonging response = new ResBelonging();
+    //                     List<String> posterUrl = new ArrayList<>();
+    //                     List<String> img = belongingsdb.getImages();
+    //                     for (String image : img) {
+    //                         String posterUrls = baseUrl + "/file/" + image;
+    //                         posterUrl.add(posterUrls);
+    //                     }
+    //                     response.setId(belongingsdb.getId());
+    //                     response.setNom(belongingsdb.getNom());
+    //                     response.setType(belongingsdb.getType());
+    //                     response.setDimension(belongingsdb.getDimension());
+    //                     response.setLocalisation(belongingsdb.getLocalisation());
+    //                     response.setPrix(belongingsdb.getPrix());
+    //                     // response.setStatus(belongingsdb.getStatus());
+    //                     response.setPoster(belongingsdb.getImages());
+    //                     response.setPosterUrl(posterUrl);
+    //                     response.setUserId(belongingsdb.getUser().getId());
+    
+    //                     responsed.add(response);
+    //                 }
+    //             }
+    //         } else {
+    //             ResBelonging response = new ResBelonging();
+    //             response.setMessage("Error while fetching Belonging by Status");
+    //             responsed.add(response);
+    //         }
+    //     } catch (Exception e) {
+    //         ResBelonging response = new ResBelonging();
+    //         response.setMessage("Error while fetching Belonging by Status");
+    //         responsed.add(response);
+    //     }
+    
+    //     return responsed;
+    // }
+    
+    
 }

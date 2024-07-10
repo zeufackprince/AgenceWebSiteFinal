@@ -3,6 +3,7 @@ package com.agenceWebSite.AgenceWebSite.Controller;
 import com.agenceWebSite.AgenceWebSite.DTO.ResBelonging;
 import com.agenceWebSite.AgenceWebSite.Models.Enums.BelongingType;
 import com.agenceWebSite.AgenceWebSite.Models.Enums.Cities;
+import com.agenceWebSite.AgenceWebSite.Models.Enums.Status;
 import com.agenceWebSite.AgenceWebSite.Repository.UserRepository;
 import com.agenceWebSite.AgenceWebSite.Service.BelongingsService;
 import lombok.AllArgsConstructor;
@@ -27,7 +28,7 @@ public class BelongingsController {
 
     private final UserRepository userRepository;
 
-    @PostMapping("/create-belonging")
+    @PostMapping("/agent/create-belonging")
     @PreAuthorize("hasRole('ADMIN','AGENT')")
     public ResponseEntity<ResBelonging> createBelon(
             @Autowired SecurityContextHolder securityContextHolder,
@@ -37,6 +38,7 @@ public class BelongingsController {
             @RequestParam("dimension") String dimension,
             @RequestParam("localisation")Cities localisation,
             @RequestParam("prix") Double prix
+            // @RequestParam("status") Status status
     ) throws IOException {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -48,8 +50,8 @@ public class BelongingsController {
         return  ResponseEntity.ok(reponse);
     }
 
-    @GetMapping("/get-All-Belongings")
-    @PreAuthorize("hasRole('ADMIN','AGENT')")
+    @GetMapping("/user/get-All-Belongings")
+    // @PreAuthorize("hasRole('ADMIN','AGENT')")
     public ResponseEntity<List<ResBelonging>> getAllBelongings() throws SQLException {
 
         List<ResBelonging> response = this.belongingsService.getAllBelongings();
@@ -59,7 +61,7 @@ public class BelongingsController {
 
 
 
-    @PutMapping("/update/{belongingId}")
+    @PutMapping("/agent/update/{belongingId}")
     @PreAuthorize("hasRole('ADMIN','AGENT')")
     public ResponseEntity<ResBelonging> updateBelon(
             @PathVariable Long belongingId,
@@ -69,6 +71,7 @@ public class BelongingsController {
             @RequestParam(required = false ) String dimension,
             @RequestParam(required = false )Cities localisation,
             @RequestParam(required = false ) Double prix
+            // @RequestParam("status") Status status
     ) throws IOException, SQLException {
 
         ResBelonging response = this.belongingsService.updateBelon(belongingId, images, name, type, dimension, localisation, prix);
@@ -76,7 +79,7 @@ public class BelongingsController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/belonging-id/{id}")
+    @GetMapping("/user/belonging-id/{id}")
     public ResponseEntity<ResBelonging> getId(@PathVariable Long id) {
 
         ResBelonging reponse = this.belongingsService.getId(id);
@@ -84,10 +87,15 @@ public class BelongingsController {
         return ResponseEntity.ok(reponse);
     }
 
-    @GetMapping(path = "/agent/belongings/{type}")
+    @GetMapping(path = "/user/belongings/{type}")
     public List<ResBelonging> getBelongingByType(@PathVariable BelongingType type)
     {
         return this.belongingsService.getBelongingByType(type);
     }
+
+    // @GetMapping(path = "/user/belonging/{status}")
+    // public List<ResBelonging> getBelongingByStatus(@PathVariable Status status){
+    //     return this.belongingsService.getBelongingByStatus(status);
+    // }
 
 }

@@ -25,7 +25,7 @@ const Registration = () => {
             const result = await registerUser(registration);
             setSuccessMessage(result);
             setErrorMessage("");
-            setRegistration({ name: "", email: "", password: "", telephone: "", image: "", role: "" });
+            setRegistration({ name: "", email: "", password: "", telephone: "", image: "", role: '' });
         } catch (error) {
             setSuccessMessage("");
             setErrorMessage(`Registration error: ${error.message}`);
@@ -99,19 +99,7 @@ const Registration = () => {
                     </div>
                 </div>
 
-                <div className="mb-3 row">
-                    <label htmlFor="role" className="col-sm-2 col-form-label">Role</label>
-                    <div className="col-sm-10">
-                        <input
-                            id="role"
-                            name="role"
-                            type="text"
-                            className="form-control"
-                            value={registration.role}
-                            onChange={handleInputChange}
-                        />
-                    </div>
-                </div>
+                
 
                 <div className="mb-3 row">
                     <label htmlFor="image" className="col-sm-2 col-form-label">Profile image</label>

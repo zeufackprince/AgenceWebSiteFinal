@@ -118,41 +118,39 @@ public class NotificationController {
 
     //send notification to each different Agents modifier pour recuperer les info de la personne connecter 
     @GetMapping("/agent/notifications/get-by-recipientId")
-    @PreAuthorize("hasRole('AGENT, ADMIN')")
-    public List<NotifRes> sendNotifications(@Autowired SecurityContextHolder securityContextHolder){
+    @PreAuthorize("hasRole('AGENT') or hasRole('ADMIN')")
+    public List<NotifRes> sendNotifications() {
 
-        //verifies if the user is Authenticated and ritrieve it ID
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-       
-        String userName  = authentication.getName();
+            // Retrieves the authenticated user's ID
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            String userName = authentication.getName();
+            Long recipientId = this.userRepository.findByEmail(userName).orElseThrow(() -> new RuntimeException("User not found")).getId();
 
-        Long recipient_id = this.userRepository.findByEmail(userName).get().getId();
+            List<NotifRes> response = new ArrayList<>();
+            try {
+                List<Notification> savedList = this.notificationRepository.findNotificationByRecipientsId(recipientId);
 
-        List<NotifRes> response = new ArrayList<>();
-        NotifRes note = new NotifRes();
-        try {
-            List<Notification> savedList = this.notificationRepository.findNotificationByRecipientsId(recipient_id);
+                for (Notification notif : savedList) {
+                    NotifRes note = new NotifRes();
+                    note.setNotif_id(notif.getId());
+                    note.setNot_message(notif.getMessage());
+                    note.setPublication_name(notif.getPublication().getTitre());
+                    note.setCreatedAt(notif.getCreatedAt());
+                    note.setMessage("This is a message you have received");
+                    note.setStatusCode(200);
+                    response.add(note);
+                }
 
-            note.setMessage("This are all the message you have received");
-            note.setStatusCode(200);
+            } catch (Exception e) {
+                NotifRes errorResponse = new NotifRes();
+                errorResponse.setMessage("Error fetching your notifications: " + e.getMessage());
+                errorResponse.setStatusCode(500);
+                response.add(errorResponse);
+            }
 
-            for(Notification notif: savedList){
-                
-                note.setNotif_id(notif.getId());
-                note.setNot_message(notif.getMessage());
-                note.setPublication_name(notif.getPublication().getTitre());
-                note.setCreatedAt(notif.getCreatedAt());
-                response.add(note);
-            }   
+    return response;
+}
 
-        } catch (Exception e) {
-            note.setMessage("Error fetching you Notifications" + e);
-            note.setStatusCode(500);
-            response.add(note);
-        }
-
-        return response;
-    }
 
 
 }

@@ -43,7 +43,7 @@ public class NotificationController {
      * @return the response entity
      */
     @PostMapping("/user/notifications/send-message")
-    public ResponseEntity<?> sendMessage(@RequestBody Notification request, @Autowired SecurityContextHolder securityContextHolder) {
+    public ResponseEntity<?> sendMessage(@RequestParam String message, @RequestParam Long publicationId, @Autowired SecurityContextHolder securityContextHolder) {
 
         // Retrieve logged-in user using SecurityContextHolder
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -53,8 +53,8 @@ public class NotificationController {
 
             Optional<OurUsers> sender = this.userRepository.findByEmail(userName);
 
-            String message = ("Je suis Mr/Mme/Mlle" + " " + sender.get().getName() + " " + "Mon contact est :" + sender.get().getEmail() + " et " + sender.get().getTelephone() + request.getMessage());
-            Long publicationId = request.getPublication().getId(); // Assuming publication ID is provided
+            String messageToSend = ("Je suis Mr/Mme/Mlle" + " " + sender.get().getName() + " " + "Mon contact est :" + sender.get().getEmail() + " et " + sender.get().getTelephone() + message);
+            // Long publicationId = request.getPublication().getId(); // Assuming publication ID is provided
 
             Optional<Publication> publicationOptional = publicationRepository.findById(publicationId);
 
@@ -63,7 +63,7 @@ public class NotificationController {
             if (publicationOptional.isPresent()) {
                 recipientAgent = publicationOptional.get().getBienImmobilier().getUser(); // Adjust based on your relationships
             } else {
-                // Logic to find recipient agent based on selection (optional)
+                throw new IllegalStateException("no pulication avialable" + publicationId);
             }
 
             if (recipientAgent == null) {
@@ -73,7 +73,7 @@ public class NotificationController {
             // Create and save notification
             Notification notification = new Notification();
             notification.setSender(sender.get());
-            notification.setMessage(message);
+            notification.setMessage(messageToSend);
             notification.setRecipients(recipientAgent);
             notification.setPublication(publicationOptional.orElse(null)); // Set publication if found
             notificationRepository.save(notification);
@@ -118,41 +118,39 @@ public class NotificationController {
 
     //send notification to each different Agents modifier pour recuperer les info de la personne connecter 
     @GetMapping("/agent/notifications/get-by-recipientId")
-    @PreAuthorize("hasRole('AGENT, ADMIN')")
-    public List<NotifRes> sendNotifications(@Autowired SecurityContextHolder securityContextHolder){
+    @PreAuthorize("hasRole('AGENT') or hasRole('ADMIN')")
+    public List<NotifRes> sendNotifications() {
 
-        //verifies if the user is Authenticated and ritrieve it ID
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-       
-        String userName  = authentication.getName();
+            // Retrieves the authenticated user's ID
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            String userName = authentication.getName();
+            Long recipientId = this.userRepository.findByEmail(userName).orElseThrow(() -> new RuntimeException("User not found")).getId();
 
-        Long recipient_id = this.userRepository.findByEmail(userName).get().getId();
+            List<NotifRes> response = new ArrayList<>();
+            try {
+                List<Notification> savedList = this.notificationRepository.findNotificationByRecipientsId(recipientId);
 
-        List<NotifRes> response = new ArrayList<>();
-        NotifRes note = new NotifRes();
-        try {
-            List<Notification> savedList = this.notificationRepository.findNotificationByRecipientsId(recipient_id);
+                for (Notification notif : savedList) {
+                    NotifRes note = new NotifRes();
+                    note.setNotif_id(notif.getId());
+                    note.setNot_message(notif.getMessage());
+                    note.setPublication_name(notif.getPublication().getTitre());
+                    note.setCreatedAt(notif.getCreatedAt());
+                    note.setMessage("This is a message you have received");
+                    note.setStatusCode(200);
+                    response.add(note);
+                }
 
-            note.setMessage("This are all the message you have received");
-            note.setStatusCode(200);
+            } catch (Exception e) {
+                NotifRes errorResponse = new NotifRes();
+                errorResponse.setMessage("Error fetching your notifications: " + e.getMessage());
+                errorResponse.setStatusCode(500);
+                response.add(errorResponse);
+            }
 
-            for(Notification notif: savedList){
-                
-                note.setNotif_id(notif.getId());
-                note.setNot_message(notif.getMessage());
-                note.setPublication_name(notif.getPublication().getTitre());
-                note.setCreatedAt(notif.getCreatedAt());
-                response.add(note);
-            }   
+    return response;
+}
 
-        } catch (Exception e) {
-            note.setMessage("Error fetching you Notifications" + e);
-            note.setStatusCode(500);
-            response.add(note);
-        }
-
-        return response;
-    }
 
 
 }

@@ -88,9 +88,9 @@ public class PublicationService {
 
         }catch (Exception e){
 
-            response.setMessage("Error creating Publication");
+            response.setMessage("Error creating Publication" + e);
             response.setStatusCode(500);
-            throw new BelongingExistException("Belonging not Found" + e);
+            
 
         }
 
@@ -182,27 +182,27 @@ public class PublicationService {
         return response;
     }
 
-    public List<PubRes> getPublicationByStatus(Status status){
-
+    public List<PubRes> getPublicationByStatus(Status status) {
         List<Publication> pubList = this.publicationRepository.findAll();
         List<PubRes> res = new ArrayList<>();
-
+    
         try {
-            for(Publication publication : pubList){
-
-                if (publication.getStatus() == status.LOUER) {
-
-                    Belongings belongings = belongingRepository.findById(publication.getBienImmobilier().getId()).get();
-
+            for (Publication publication : pubList) {
+                // Check if the publication's status matches the given status
+                if (publication.getStatus() == status) {
+                    Belongings belongings = belongingRepository.findById(publication.getBienImmobilier().getId()).orElse(null);
+                    if (belongings == null) {
+                        continue; // Skip if the belonging is not found
+                    }
+    
                     List<String> posterUrl = new ArrayList<>();
                     List<String> poster = publication.getImages();
-
-                    for (String image : poster){
-
+    
+                    for (String image : poster) {
                         String posterUrls = baseUrl + "/file/" + image;
                         posterUrl.add(posterUrls);
                     }
-
+    
                     PubRes pub = new PubRes();
                     pub.setId(publication.getId());
                     pub.setTitre(publication.getTitre());
@@ -216,50 +216,18 @@ public class PublicationService {
                     pub.setStatus(publication.getStatus());
                     pub.setType(belongings.getType());
                     pub.setBelonging_id(belongings.getId());
-
-                    res.add(pub);
-                    
-                }else if(publication.getStatus() == status.ACHETER ){
-
-                    Belongings belongings = belongingRepository.findById(publication.getBienImmobilier().getId()).get();
-
-                    List<String> posterUrl = new ArrayList<>();
-                    List<String> poster = publication.getImages();
-
-                    for (String image : poster){
-
-                        String posterUrls = baseUrl + "/file/" + image;
-                        posterUrl.add(posterUrls);
-                    }
-
-                    PubRes pub = new PubRes();
-                    pub.setId(publication.getId());
-                    pub.setTitre(publication.getTitre());
-                    pub.setDescription(publication.getDescription());
-                    pub.setPoster(publication.getImages());
-                    pub.setPosterUrl(posterUrl);
-                    pub.setDimension(belongings.getDimension());
-                    pub.setLocalisation(belongings.getLocalisation());
-                    pub.setNom(belongings.getNom());
-                    pub.setPrix(belongings.getPrix());
-                    pub.setStatus(publication.getStatus());
-                    pub.setType(belongings.getType());
-                    pub.setBelonging_id(belongings.getId());
-
+    
                     res.add(pub);
                 }
-
             }
         } catch (Exception e) {
             PubRes pub = new PubRes();
-            pub.setMessage("Error fetching Publications of State " + status + e);
+            pub.setMessage("Error fetching Publications of Status " + status + ": " + e.getMessage());
             res.add(pub);
-            
         }
-
+    
         return res;
-
     }
-
+    
    
 }

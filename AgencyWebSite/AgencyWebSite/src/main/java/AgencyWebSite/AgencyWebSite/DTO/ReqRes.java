@@ -3,8 +3,6 @@ package AgencyWebSite.AgencyWebSite.DTO;
 import AgencyWebSite.AgencyWebSite.Models.Enums.Roles;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import jakarta.persistence.Column;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,31 +1,17 @@
 package AgencyWebSite.AgencyWebSite.Controller;
 
 import AgencyWebSite.AgencyWebSite.DTO.ResBelonging;
-import AgencyWebSite.AgencyWebSite.Exceptions.FileExistsException;
-import AgencyWebSite.AgencyWebSite.Models.Belongings;
 import AgencyWebSite.AgencyWebSite.Models.Enums.BelongingType;
 import AgencyWebSite.AgencyWebSite.Models.Enums.Cities;
-import AgencyWebSite.AgencyWebSite.Models.Enums.Roles;
-import AgencyWebSite.AgencyWebSite.Models.OurUsers;
-import AgencyWebSite.AgencyWebSite.Repository.BelongingRepository;
-import AgencyWebSite.AgencyWebSite.Repository.UserRepository;
 import AgencyWebSite.AgencyWebSite.Service.BelongingsService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.sql.rowset.serial.SerialBlob;
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.sql.Blob;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Base64;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")

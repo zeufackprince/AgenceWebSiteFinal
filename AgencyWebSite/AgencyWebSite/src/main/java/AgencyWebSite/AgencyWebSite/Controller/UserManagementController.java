@@ -2,10 +2,7 @@ package AgencyWebSite.AgencyWebSite.Controller;
 
 import AgencyWebSite.AgencyWebSite.DTO.ReqRes;
 import AgencyWebSite.AgencyWebSite.Models.Enums.Roles;
-import AgencyWebSite.AgencyWebSite.Models.OurUsers;
 import AgencyWebSite.AgencyWebSite.Service.UsersManagementService;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,6 +33,12 @@ public class UserManagementController {
         return new ResponseEntity<>(usersManagementService.register(reg, file), HttpStatus.CREATED);
 
     }
+
+    @GetMapping("/welcome")
+	public String welcome() {
+
+		return "welcome to the agency website!";
+	}
 
 //    /**
 //     * Login response entity.

@@ -11,9 +11,7 @@ import AgencyWebSite.AgencyWebSite.Repository.BelongingRepository;
 import AgencyWebSite.AgencyWebSite.Repository.PublicationRepository;
 import AgencyWebSite.AgencyWebSite.Repository.UserRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.ArrayList;
 import java.util.List;

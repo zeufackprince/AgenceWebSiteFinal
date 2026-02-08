@@ -1,13 +1,9 @@
 package AgencyWebSite.AgencyWebSite.DTO;
 
-import AgencyWebSite.AgencyWebSite.Models.Belongings;
 import AgencyWebSite.AgencyWebSite.Models.Enums.BelongingType;
 import AgencyWebSite.AgencyWebSite.Models.Enums.Cities;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
